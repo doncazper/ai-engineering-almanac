@@ -1,0 +1,4416 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Source-aware AI engineering terms, workflow phrases, prompt macros, and production patterns.">
+      
+      
+      
+      
+        <link rel="prev" href="../../source-strategy/">
+      
+      
+        <link rel="next" href="../../frontend-backend-contracts/backend-ready-frontend-spec/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Research Batch 01 - AI Engineering Almanac</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai-engineering-almanac-research-batch-01" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AI Engineering Almanac" class="md-header__button md-logo" aria-label="AI Engineering Almanac" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Engineering Almanac
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Research Batch 01
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/doncazper/ai-engineering-almanac" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AI Engineering Almanac" class="md-nav__button md-logo" aria-label="AI Engineering Almanac" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Engineering Almanac
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/doncazper/ai-engineering-almanac" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../source-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Research
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Batch 01
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research Batch 01
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-copyright-attribution-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Copyright / Attribution Rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend–Backend Contracts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Frontend–Backend Contracts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-backend-contracts/backend-ready-frontend-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend-Ready Frontend Spec
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-backend-contracts/field-to-backend-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field-to-Backend Mapping
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-backend-contracts/frontend-backend-contract-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contract Engineering
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-backend-contracts/frontend-backend-handoff-packet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Handoff Packet
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-backend-contracts/mock-data-must-match-final-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mock Data Must Match Final API
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conversation Capture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Conversation Capture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conversation-capture/session-to-wiki-compiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session-to-Wiki Compiler
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conversation-capture/durable-knowledge-object/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Durable Knowledge Object
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--draft"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conversation-capture/no-loss-distillation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    No-Loss Distillation
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../conversation-capture/extract-dont-summarize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extract, Don't Summarize
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Macros
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prompt Macros
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt-macros/prompt-macro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Macro
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt-macros/workflow-phrase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow Phrase
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt-macros/define-done/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Define Done
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki Database
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wiki Database
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wiki-database/source-tiering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Tiering
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wiki-database/canonical-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canonical Entry
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wiki-database/docs-as-database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docs-as-Database
+  
+
+    
+  </span>
+  
+  
+    
+  
+  
+    <span class="md-status md-status--seed"></span>
+  
+
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Templates
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Templates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/canonical-entry-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Canonical Entry Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/prompt-macro-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Macro Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/session-capture-template/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Capture Template
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templates/frontend-backend-handoff-packet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend–Backend Handoff Packet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#source-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source Strategy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-copyright-attribution-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Copyright / Attribution Rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ai-engineering-almanac-research-batch-01">AI Engineering Almanac — Research Batch 01<a class="headerlink" href="#ai-engineering-almanac-research-batch-01" title="Permanent link">&para;</a></h1>
+<p><em>Date: 2026-06-25; updated 2026-06-26</em></p>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h2>
+<p>This file is a seed research batch for the public <strong>AI Engineering Almanac</strong> / interactive wiki. It focuses on:
+- AI engineering terms
+- modern AI workflow vocabulary
+- agent/productivity phrases
+- prompt macros
+- conversation-to-wiki capture language
+- frontend/backend contract-engineering vocabulary</p>
+<p>The goal is not to create final polished entries yet. The goal is to collect candidate terms, aliases, categories, relationships, and prompt phrases so they can later become canonical wiki pages.</p>
+<h2 id="source-strategy">Source Strategy<a class="headerlink" href="#source-strategy" title="Permanent link">&para;</a></h2>
+<p>Use a two-layer source strategy:</p>
+<ol>
+<li><strong>Trend / vocabulary mining</strong></li>
+<li>Newsletters, YouTube explainers, product demos, developer blogs, launch notes, and community language.</li>
+<li>These are good for discovering emerging terms and real phrases people actually use.</li>
+<li>
+<p>Example source: The Neuron / The Neuron Daily.</p>
+</li>
+<li>
+<p><strong>Canonical definition verification</strong></p>
+</li>
+<li>Official docs, research papers, standards, SDK documentation, and vendor docs.</li>
+<li>These are better for final definitions and production notes.</li>
+<li>Examples: OpenAI docs, Anthropic docs, Google Gemini docs, MCP docs.</li>
+</ol>
+<h2 id="important-copyright-attribution-rule">Important Copyright / Attribution Rule<a class="headerlink" href="#important-copyright-attribution-rule" title="Permanent link">&para;</a></h2>
+<p>Do not copy paid newsletters or long copyrighted passages into the public wiki. Instead:
+- extract the reusable concept,
+- rewrite it in original language,
+- cite/link the source,
+- convert concrete prompt examples into generic prompt patterns,
+- mark unverified product claims as “source-reported” until confirmed by primary docs.</p>
+<hr />
+<h1 id="a-core-ai-workflow-taxonomy">A. Core AI Workflow Taxonomy<a class="headerlink" href="#a-core-ai-workflow-taxonomy" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI Project</td>
+<td>A persistent workspace for files, instructions, chats, context, and ongoing work.</td>
+<td>Users confuse projects with custom assistants.</td>
+<td>ai-workflow, context</td>
+</tr>
+<tr>
+<td>Custom GPT</td>
+<td>A reusable custom assistant configured for a task, role, knowledge base, or action set.</td>
+<td>Major user-facing AI customization pattern.</td>
+<td>assistants, prompt-engineering</td>
+</tr>
+<tr>
+<td>Gemini Gem</td>
+<td>Google’s custom assistant pattern, similar in spirit to Custom GPTs.</td>
+<td>Helps normalize cross-vendor vocabulary.</td>
+<td>assistants, google</td>
+</tr>
+<tr>
+<td>AI Skill</td>
+<td>A reusable workflow package containing instructions, constraints, examples, resources, scripts, or quality bars.</td>
+<td>One of the biggest productivity unlocks for repeatable AI work.</td>
+<td>skills, workflow</td>
+</tr>
+<tr>
+<td>Skillify</td>
+<td>To turn a repeated prompt/workflow into a reusable skill.</td>
+<td>Useful shortcut phrase for the Almanac.</td>
+<td>prompt-macro, workflow</td>
+</tr>
+<tr>
+<td>Agent</td>
+<td>An AI application that can plan, call tools, preserve state, and perform multi-step work.</td>
+<td>Core term for modern AI products.</td>
+<td>agents, tool-use</td>
+</tr>
+<tr>
+<td>Subagent</td>
+<td>A specialist helper agent inside a larger workflow.</td>
+<td>Useful for reviewer/builder/product-team patterns.</td>
+<td>agents, orchestration</td>
+</tr>
+<tr>
+<td>Plugin</td>
+<td>A bundled package of skills, connectors, tools, hooks, or agent capabilities.</td>
+<td>Helps explain “toolbox” packaging.</td>
+<td>plugins, distribution</td>
+</tr>
+<tr>
+<td>Connector</td>
+<td>A connection between an AI system and an outside app or data source.</td>
+<td>Important for Gmail, Drive, Slack, Linear, Notion, databases, etc.</td>
+<td>connectors, integrations</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>Model Context Protocol; a standard way for AI apps to connect to tools, data, and workflows.</td>
+<td>Emerging infrastructure layer for agent interoperability.</td>
+<td>mcp, protocol</td>
+</tr>
+<tr>
+<td>Tool</td>
+<td>A function, API, or external capability exposed to a model.</td>
+<td>Foundation for agentic systems.</td>
+<td>tool-use</td>
+</tr>
+<tr>
+<td>Function Calling</td>
+<td>Letting a model request an application-defined function/tool call using structured arguments.</td>
+<td>Essential for production AI apps.</td>
+<td>tool-use, api</td>
+</tr>
+<tr>
+<td>Tool Call</td>
+<td>A model-generated request to invoke a specific tool with arguments.</td>
+<td>Needed for debugging tool traces.</td>
+<td>tool-use</td>
+</tr>
+<tr>
+<td>Tool Call Output</td>
+<td>The result returned by a tool back to the model.</td>
+<td>Needed for agent loops and traceability.</td>
+<td>tool-use</td>
+</tr>
+<tr>
+<td>Structured Output</td>
+<td>Model output constrained to a schema or format such as JSON Schema.</td>
+<td>Critical for reliable integration with software systems.</td>
+<td>schemas, reliability</td>
+</tr>
+<tr>
+<td>JSON Mode</td>
+<td>A weaker output mode that ensures valid JSON but may not guarantee schema adherence.</td>
+<td>Commonly confused with structured outputs.</td>
+<td>schemas</td>
+</tr>
+<tr>
+<td>Schema Adherence</td>
+<td>The degree to which model output follows the requested schema exactly.</td>
+<td>Key eval dimension for production apps.</td>
+<td>evals, schemas</td>
+</tr>
+<tr>
+<td>Tool Search</td>
+<td>A pattern where rarely used tools are deferred and loaded only when needed.</td>
+<td>Important for large tool registries.</td>
+<td>tool-use, scaling</td>
+</tr>
+<tr>
+<td>Hosted Tool</td>
+<td>A platform-provided tool such as web search, file search, code execution, or computer use.</td>
+<td>Important distinction from custom function tools.</td>
+<td>tools</td>
+</tr>
+<tr>
+<td>Custom Tool</td>
+<td>An app-defined function or capability exposed to a model.</td>
+<td>Foundation of agentic apps.</td>
+<td>tools</td>
+</tr>
+<tr>
+<td>Computer Use</td>
+<td>AI-driven control of a computer/browser/UI environment.</td>
+<td>Emerging agent capability.</td>
+<td>agents, automation</td>
+</tr>
+<tr>
+<td>Browser Agent</td>
+<td>An agent that can navigate web pages, click, extract information, and complete workflows.</td>
+<td>Common AI automation pattern.</td>
+<td>agents, web</td>
+</tr>
+<tr>
+<td>Voice Agent</td>
+<td>An agent designed for spoken interaction, realtime audio, interruptions, and voice UX.</td>
+<td>Important multimodal category.</td>
+<td>voice, agents</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="b-prompt-engineering-and-prompt-macros">B. Prompt Engineering and Prompt Macros<a class="headerlink" href="#b-prompt-engineering-and-prompt-macros" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prompt Engineering</td>
+<td>Writing effective instructions so a model consistently generates desired output.</td>
+<td>Canonical foundation term.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Prompt Macro</td>
+<td>A reusable high-leverage phrase or template that triggers a known workflow.</td>
+<td>Central to this Almanac’s utility.</td>
+<td>prompt-macro</td>
+</tr>
+<tr>
+<td>Prompt Wrapper</td>
+<td>A structured prompt shell around raw user intent.</td>
+<td>Useful for turning vague requests into reliable outputs.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Prompt Builder</td>
+<td>Code or template logic that constructs prompts from typed inputs.</td>
+<td>Production-grade prompt management.</td>
+<td>prompting, engineering</td>
+</tr>
+<tr>
+<td>Code-Managed Prompt</td>
+<td>A prompt stored and versioned in application code.</td>
+<td>Enables review, tests, deployment, and diffing.</td>
+<td>prompting, devops</td>
+</tr>
+<tr>
+<td>Prompt Versioning</td>
+<td>Tracking prompt changes as versions with changelog and tests.</td>
+<td>Prevents silent behavior drift.</td>
+<td>reliability</td>
+</tr>
+<tr>
+<td>Prompt Snapshot</td>
+<td>A frozen version of a prompt used for reproducible behavior.</td>
+<td>Useful in evals and production rollouts.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Model Snapshot</td>
+<td>A specific model version pinned for consistent production behavior.</td>
+<td>Prevents silent model-change regressions.</td>
+<td>models, reliability</td>
+</tr>
+<tr>
+<td>Prompt Fixture</td>
+<td>A representative input/output example used to test prompt behavior.</td>
+<td>Basis for prompt regression tests.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Prompt Regression Test</td>
+<td>A test that catches behavior changes after prompt/model updates.</td>
+<td>Essential for production AI systems.</td>
+<td>evals, testing</td>
+</tr>
+<tr>
+<td>Prompt Lint</td>
+<td>Static review of prompt structure, missing constraints, ambiguity, and unsafe instructions.</td>
+<td>Could become a tool in the wiki.</td>
+<td>quality</td>
+</tr>
+<tr>
+<td>Prompt Diff</td>
+<td>A before/after comparison of prompt behavior or instructions.</td>
+<td>Useful for prompt PR reviews.</td>
+<td>promptops</td>
+</tr>
+<tr>
+<td>PromptOps</td>
+<td>Operational discipline for managing prompts like production code.</td>
+<td>Strong wiki category.</td>
+<td>promptops</td>
+</tr>
+<tr>
+<td>System/Developer/User Roles</td>
+<td>Different instruction authority levels in model calls.</td>
+<td>Needed for robust API prompting.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Identity Section</td>
+<td>Prompt section describing assistant role, purpose, and communication style.</td>
+<td>Common developer-message pattern.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Instructions Section</td>
+<td>Prompt section containing rules, constraints, and required behavior.</td>
+<td>Core prompt structure.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Examples Section</td>
+<td>Prompt section containing desired input/output examples.</td>
+<td>Few-shot learning and consistency.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Context Section</td>
+<td>Prompt section containing external facts, private data, or task-specific material.</td>
+<td>RAG and context engineering.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Few-Shot Prompting</td>
+<td>Giving the model examples so it learns the desired pattern.</td>
+<td>Widely used technique.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Zero-Shot Prompting</td>
+<td>Asking a model to perform a task without examples.</td>
+<td>Baseline prompting term.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Multi-Shot Prompting</td>
+<td>Providing multiple examples to shape behavior.</td>
+<td>Useful for formatting and tone.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Consistent Example Formatting</td>
+<td>Keeping few-shot examples structurally identical.</td>
+<td>Prevents undesired output formats.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Role Prompting</td>
+<td>Assigning the model a role such as reviewer, architect, PM, or QA.</td>
+<td>Useful prompt macro pattern.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>XML Delimiters</td>
+<td>XML-like tags used to separate prompt sections and source content.</td>
+<td>Helps boundary clarity.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Markdown Prompt Structure</td>
+<td>Headers, bullets, tables, and sections used to organize prompts.</td>
+<td>Human-readable prompt design.</td>
+<td>prompting</td>
+</tr>
+<tr>
+<td>Context Injection</td>
+<td>Adding relevant external context into the prompt.</td>
+<td>Foundation of RAG and grounded answers.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Context Window</td>
+<td>The maximum amount of input/output a model can consider in one request.</td>
+<td>Crucial for long conversations.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Context Budget</td>
+<td>A planned allocation of tokens among task, rules, examples, and evidence.</td>
+<td>Prevents context stuffing.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Context Packet</td>
+<td>A compact bundle of relevant project information for a model.</td>
+<td>Useful for handoffs and long-running work.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Context Compaction</td>
+<td>Compressing previous context into a smaller representation.</td>
+<td>Needed for long conversations.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Prompt Caching</td>
+<td>Reusing repeated prompt prefixes to reduce latency and/or cost.</td>
+<td>Important scaling pattern.</td>
+<td>performance</td>
+</tr>
+<tr>
+<td>Citation Gate</td>
+<td>A requirement that claims must be supported by sources before publication.</td>
+<td>Important for public wiki trust.</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Grounded Answer</td>
+<td>An answer tied to provided evidence or retrievable sources.</td>
+<td>Needed for fact-heavy AI output.</td>
+<td>reliability</td>
+</tr>
+<tr>
+<td>Hallucination Guard</td>
+<td>A prompt/eval pattern that reduces unsupported claims.</td>
+<td>Trust and safety.</td>
+<td>reliability</td>
+</tr>
+<tr>
+<td>Refusal Boundary</td>
+<td>Instructions for what the model should decline or safely redirect.</td>
+<td>Safety and policy.</td>
+<td>guardrails</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="c-agent-engineering-terms">C. Agent Engineering Terms<a class="headerlink" href="#c-agent-engineering-terms" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent Loop</td>
+<td>The repeated cycle of plan → act → observe → verify → continue/stop.</td>
+<td>Core agent mental model.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Planner</td>
+<td>Agent component that decomposes a goal into steps.</td>
+<td>Common orchestration role.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Executor</td>
+<td>Agent component that performs tool calls or code changes.</td>
+<td>Common agent role.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Critic</td>
+<td>Agent role that reviews output skeptically.</td>
+<td>Helps reduce self-agreement.</td>
+<td>agents, evals</td>
+</tr>
+<tr>
+<td>Verifier</td>
+<td>Agent role that checks whether output satisfies requirements.</td>
+<td>Essential for reliability.</td>
+<td>agents, testing</td>
+</tr>
+<tr>
+<td>Builder/Critic Loop</td>
+<td>Two-agent pattern where one creates and one challenges.</td>
+<td>Powerful for code and specs.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Product Team of Agents</td>
+<td>Multiple specialists such as PM, UI designer, UX reviewer, backend architect, QA.</td>
+<td>High-value workflow for product building.</td>
+<td>agents, product</td>
+</tr>
+<tr>
+<td>Handoff</td>
+<td>Passing task ownership between specialist agents or system components.</td>
+<td>Core orchestration term.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Orchestration</td>
+<td>Managing agent roles, tools, state, handoffs, and approvals.</td>
+<td>Production agent architecture.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Runtime State</td>
+<td>The memory/state a workflow preserves across steps.</td>
+<td>Needed for multi-step work.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Trace</td>
+<td>A record of model calls, tool calls, inputs, outputs, and decisions.</td>
+<td>Debugging and observability.</td>
+<td>observability</td>
+</tr>
+<tr>
+<td>Human-in-the-Loop</td>
+<td>Human review or approval inside an automated workflow.</td>
+<td>Safety and governance.</td>
+<td>governance</td>
+</tr>
+<tr>
+<td>Approval Gate</td>
+<td>A checkpoint before risky actions like writes, deletes, purchases, or sends.</td>
+<td>Agent safety.</td>
+<td>permissions</td>
+</tr>
+<tr>
+<td>Read-Only Connector</td>
+<td>Connector that can inspect data but not modify it.</td>
+<td>Safer default for agents.</td>
+<td>security</td>
+</tr>
+<tr>
+<td>Write Connector</td>
+<td>Connector that can create, update, delete, send, or purchase.</td>
+<td>Needs stricter approval.</td>
+<td>security</td>
+</tr>
+<tr>
+<td>Tool Permission Boundary</td>
+<td>The rule defining what tools an agent may use and when.</td>
+<td>Prevents damage/exfiltration.</td>
+<td>security</td>
+</tr>
+<tr>
+<td>Least-Privilege Tools</td>
+<td>Giving an agent only the tools and scopes needed for the task.</td>
+<td>Security best practice.</td>
+<td>security</td>
+</tr>
+<tr>
+<td>Sandbox Agent</td>
+<td>Agent running in an isolated environment with files/commands/packages.</td>
+<td>Safer code execution.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Background Agent</td>
+<td>Agent that works asynchronously or outside the active chat UI.</td>
+<td>Important product pattern.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Agent View</td>
+<td>A dashboard or UI for monitoring multiple agent sessions.</td>
+<td>Helps manage parallel work.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Parallel Agents</td>
+<td>Multiple agents working on separate scoped tasks simultaneously.</td>
+<td>Productivity multiplier.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Scoped Task</td>
+<td>A bounded task with clear goal, files, constraints, and exit criteria.</td>
+<td>Prevents agent sprawl.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Auto Mode</td>
+<td>Letting an agent proceed with fewer manual approvals after scope is clear.</td>
+<td>Useful but needs safety framing.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Remote Control</td>
+<td>Checking or controlling agent sessions from another device.</td>
+<td>Emerging workflow.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Voice-to-Agent Capture</td>
+<td>Starting a task by voice when ideas arise.</td>
+<td>Useful productivity phrase.</td>
+<td>voice, agents</td>
+</tr>
+<tr>
+<td>Agent-Native CLI</td>
+<td>A command-line interface designed for both humans and AI agents.</td>
+<td>Important emerging product-design term.</td>
+<td>cli, agents</td>
+</tr>
+<tr>
+<td>Ambient Mode</td>
+<td>An agent watches a workspace/channel and proactively flags relevant events.</td>
+<td>Useful agent UX pattern.</td>
+<td>agents, collaboration</td>
+</tr>
+<tr>
+<td>Shared Second Brain</td>
+<td>Team-visible AI assistant/context hub in a shared workspace.</td>
+<td>Good product metaphor.</td>
+<td>collaboration</td>
+</tr>
+<tr>
+<td>Runaway Loop</td>
+<td>A loop that keeps spending tokens/time without converging.</td>
+<td>Important failure mode.</td>
+<td>agents, cost</td>
+</tr>
+<tr>
+<td>Fixed-Pass Loop</td>
+<td>A loop constrained to a set number of passes.</td>
+<td>Practical guardrail.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Exit Criteria</td>
+<td>Explicit definition of when the agent should stop.</td>
+<td>Essential for loops/goals.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Done Looks Like</td>
+<td>Plain-English exit criteria phrase.</td>
+<td>Excellent prompt macro.</td>
+<td>prompt-macro</td>
+</tr>
+<tr>
+<td>Goal</td>
+<td>A higher-level target that an agent/loop works toward until exit criteria are met.</td>
+<td>Agent workflow term.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Self-Review Bias</td>
+<td>Tendency for a generator to overtrust its own output.</td>
+<td>Justifies adversarial review.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Cross-Model Review</td>
+<td>Asking a different model/tool to verify output.</td>
+<td>Useful manual subagent pattern.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>High-Agency Builder</td>
+<td>Person/agent/team that proactively ships useful work without over-asking.</td>
+<td>Cultural term worth capturing.</td>
+<td>culture</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="d-coding-agent-ai-development-workflow-terms">D. Coding Agent / AI Development Workflow Terms<a class="headerlink" href="#d-coding-agent-ai-development-workflow-terms" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Worktree</td>
+<td>Separate working copy of a repository, useful for parallel agent/code tasks.</td>
+<td>Agent coding workflows rely on parallel isolation.</td>
+<td>git, agents</td>
+</tr>
+<tr>
+<td>Repo Map</td>
+<td>A summary of important files, folders, entry points, and architecture.</td>
+<td>Helps agents navigate codebases.</td>
+<td>codebase</td>
+</tr>
+<tr>
+<td>Patch Plan</td>
+<td>A structured plan of files to change and why.</td>
+<td>Improves code generation reliability.</td>
+<td>coding</td>
+</tr>
+<tr>
+<td>Diff Review</td>
+<td>Reviewing generated code changes as a diff.</td>
+<td>Core human/AI workflow.</td>
+<td>git</td>
+</tr>
+<tr>
+<td>CI Fixer</td>
+<td>Agent/workflow that watches failing CI and proposes fixes.</td>
+<td>Common automation use case.</td>
+<td>devops</td>
+</tr>
+<tr>
+<td>Bug Report to PR</td>
+<td>Workflow that turns a bug report into investigation, fix, tests, and pull request.</td>
+<td>High-value coding-agent playbook.</td>
+<td>agents, coding</td>
+</tr>
+<tr>
+<td>Repro Harness</td>
+<td>Minimal setup that reproduces a bug.</td>
+<td>Prevents speculative fixes.</td>
+<td>testing</td>
+</tr>
+<tr>
+<td>Behavioral Verification</td>
+<td>Checking that software works for the user, not merely that tests pass.</td>
+<td>Important correction to weak agent tests.</td>
+<td>testing</td>
+</tr>
+<tr>
+<td>TDD Overfit</td>
+<td>When an agent writes weak tests and overfits code to pass them.</td>
+<td>Important AI coding failure mode.</td>
+<td>testing</td>
+</tr>
+<tr>
+<td>Smoke Test</td>
+<td>Fast basic test that verifies the system still works.</td>
+<td>Good agent validation step.</td>
+<td>testing</td>
+</tr>
+<tr>
+<td>Golden Path</td>
+<td>The primary happy-path user flow that must work.</td>
+<td>Useful product/testing term.</td>
+<td>product</td>
+</tr>
+<tr>
+<td>Regression Fixture</td>
+<td>A stored case that previously failed and should not fail again.</td>
+<td>Production quality.</td>
+<td>testing</td>
+</tr>
+<tr>
+<td>Appshot</td>
+<td>A screenshot or captured app state used for review/debugging.</td>
+<td>Useful for frontend agents.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>CLAUDE.md</td>
+<td>Project instruction file pattern for Claude-based coding workflows.</td>
+<td>Important emerging artifact pattern.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>AGENTS.md</td>
+<td>Project instruction file pattern for coding agents.</td>
+<td>Cross-agent repository instructions.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Project Instruction File</td>
+<td>Local file containing repo-specific instructions for agents.</td>
+<td>Avoids repeating context in every chat.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Memory Update</td>
+<td>Adding repeated lessons/mistakes to project memory or instruction files.</td>
+<td>Useful workflow phrase.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Verify It, Don’t Just Test It</td>
+<td>Prompt phrase requiring behavioral validation beyond unit tests.</td>
+<td>High-leverage macro.</td>
+<td>prompt-macro</td>
+</tr>
+<tr>
+<td>One Scoped Task Per Agent</td>
+<td>Rule for avoiding multi-agent conflicts.</td>
+<td>Good agent workflow practice.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>Parallel Work Isolation</td>
+<td>Keeping separate agent work from overwriting other changes.</td>
+<td>Git/worktree pattern.</td>
+<td>agents</td>
+</tr>
+<tr>
+<td>AI Code Reviewer</td>
+<td>Agent/persona that audits generated code for bugs, security, style, and maintainability.</td>
+<td>Common subagent.</td>
+<td>coding</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="e-frontendbackend-contract-engineering">E. Frontend–Backend Contract Engineering<a class="headerlink" href="#e-frontendbackend-contract-engineering" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Backend-Ready Frontend Spec</td>
+<td>A frontend feature spec detailed enough for backend implementation.</td>
+<td>Major productivity accelerator.</td>
+<td>frontend, backend</td>
+</tr>
+<tr>
+<td>Mock Screenshot</td>
+<td>A visual/wireframe representation used to infer backend requirements.</td>
+<td>Helps translate UI to APIs and data.</td>
+<td>design</td>
+</tr>
+<tr>
+<td>Field-to-Backend Mapping</td>
+<td>Mapping each UI element to state, API field, backend type, DB column, validation, and errors.</td>
+<td>Reduces integration bugs.</td>
+<td>api, frontend</td>
+</tr>
+<tr>
+<td>UI Element Inventory</td>
+<td>List of every visible field, button, filter, state, and action.</td>
+<td>Prevents missing backend requirements.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>Component Inventory</td>
+<td>List of reusable UI components needed by a feature.</td>
+<td>Helps frontend planning.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>API Contract</td>
+<td>Agreement on endpoint path, request/response schema, errors, permissions, and side effects.</td>
+<td>Core integration artifact.</td>
+<td>api</td>
+</tr>
+<tr>
+<td>DTO</td>
+<td>Data Transfer Object; shape of data crossing an API/application boundary.</td>
+<td>Common backend term.</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>View Model</td>
+<td>Shape of data optimized for display in the UI.</td>
+<td>Explains backend response design.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>Schema-First Development</td>
+<td>Designing schema/contracts before implementation.</td>
+<td>Prevents naming/type drift.</td>
+<td>api</td>
+</tr>
+<tr>
+<td>Contract-First Development</td>
+<td>Agreeing on interfaces before frontend/backend implementation.</td>
+<td>Enables parallel development.</td>
+<td>api</td>
+</tr>
+<tr>
+<td>Mock API</td>
+<td>Fake API that returns data matching the final contract.</td>
+<td>Lets frontend proceed before backend is ready.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>Fixture Fidelity</td>
+<td>How closely mock data matches real production API data.</td>
+<td>Prevents late integration bugs.</td>
+<td>testing</td>
+</tr>
+<tr>
+<td>Contract Test</td>
+<td>Test ensuring frontend/backend agree on payloads and errors.</td>
+<td>Protects integration.</td>
+<td>testing</td>
+</tr>
+<tr>
+<td>State Matrix</td>
+<td>Table of loading, empty, success, error, permission, and edge states.</td>
+<td>Essential product-quality artifact.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>Error State</td>
+<td>UI and API behavior when something fails.</td>
+<td>Frequently forgotten.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>Empty State</td>
+<td>UI shown when no data exists.</td>
+<td>Product polish and reliability.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>Loading State</td>
+<td>UI behavior while waiting for data/action completion.</td>
+<td>UX quality.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>Permission Matrix</td>
+<td>Who can view, create, update, delete, approve, export, or administer.</td>
+<td>Security/product alignment.</td>
+<td>auth</td>
+</tr>
+<tr>
+<td>Analytics Event Map</td>
+<td>Mapping user actions to analytics events and properties.</td>
+<td>Product instrumentation.</td>
+<td>analytics</td>
+</tr>
+<tr>
+<td>Integration-Ready Backend</td>
+<td>Backend whose API, validation, errors, and payloads match frontend expectations.</td>
+<td>Practical definition of “done.”</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>Handoff Packet</td>
+<td>Complete package for frontend/backend/QA alignment.</td>
+<td>Reusable template.</td>
+<td>product</td>
+</tr>
+<tr>
+<td>Acceptance Criteria</td>
+<td>Conditions that must be true for work to be accepted.</td>
+<td>Product/testing staple.</td>
+<td>product</td>
+</tr>
+<tr>
+<td>Edge Case Matrix</td>
+<td>Table of unusual inputs, states, permissions, timing, and failures.</td>
+<td>Reduces bugs.</td>
+<td>testing</td>
+</tr>
+<tr>
+<td>Eventual UI Contract</td>
+<td>Expected frontend behavior once backend integration is complete.</td>
+<td>Helps build backend first.</td>
+<td>frontend</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="f-conversation-capture-knowledge-distillation">F. Conversation Capture &amp; Knowledge Distillation<a class="headerlink" href="#f-conversation-capture-knowledge-distillation" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Session-to-Wiki Compiler</td>
+<td>Workflow that converts a conversation into wiki entries, prompt macros, templates, decisions, and tasks.</td>
+<td>Core project capability.</td>
+<td>knowledge-capture</td>
+</tr>
+<tr>
+<td>No-Loss Distillation</td>
+<td>Preserving raw information first, then extracting summaries and canonical entries.</td>
+<td>Prevents over-summarization.</td>
+<td>knowledge-capture</td>
+</tr>
+<tr>
+<td>Raw Transcript</td>
+<td>Original conversation record.</td>
+<td>Source of truth, private by default.</td>
+<td>archive</td>
+</tr>
+<tr>
+<td>Clean Transcript</td>
+<td>Lightly edited transcript with noise removed and privacy protected.</td>
+<td>Safer review input.</td>
+<td>archive</td>
+</tr>
+<tr>
+<td>Session Digest</td>
+<td>Structured summary of goals, decisions, terms, prompts, artifacts, and follow-ups.</td>
+<td>Main public/private bridge.</td>
+<td>knowledge-capture</td>
+</tr>
+<tr>
+<td>Canonical Entry</td>
+<td>Polished wiki page for a concept.</td>
+<td>Final public knowledge object.</td>
+<td>wiki</td>
+</tr>
+<tr>
+<td>Raw Insight</td>
+<td>Interesting but unpolished idea preserved for later.</td>
+<td>Prevents idea loss.</td>
+<td>knowledge-capture</td>
+</tr>
+<tr>
+<td>Knowledge Extraction Checklist</td>
+<td>Checklist for mining conversations into durable objects.</td>
+<td>Makes the process repeatable.</td>
+<td>workflow</td>
+</tr>
+<tr>
+<td>Prompt Macro Extraction</td>
+<td>Pulling reusable AI instructions out of a conversation.</td>
+<td>Central to Almanac value.</td>
+<td>prompt-macro</td>
+</tr>
+<tr>
+<td>Artifact Inventory</td>
+<td>List of generated images, files, code, diagrams, and templates.</td>
+<td>Prevents losing outputs.</td>
+<td>artifacts</td>
+</tr>
+<tr>
+<td>Decision Log</td>
+<td>Record of decisions, rationale, and follow-up implications.</td>
+<td>Useful for project memory.</td>
+<td>project-management</td>
+</tr>
+<tr>
+<td>Redaction Pass</td>
+<td>Removing private/sensitive info before publication.</td>
+<td>Public safety.</td>
+<td>privacy</td>
+</tr>
+<tr>
+<td>Privacy Boundary</td>
+<td>Explicit rule separating public, private, and never-publish content.</td>
+<td>Needed for public wiki.</td>
+<td>privacy</td>
+</tr>
+<tr>
+<td>Source Note</td>
+<td>Metadata connecting an entry to sources or sessions.</td>
+<td>Trust and traceability.</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Confidence Label</td>
+<td>Label such as draft, verified, source-reported, opinion, or canonical.</td>
+<td>Prevents overclaiming.</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Changelog Entry</td>
+<td>Record of how a wiki page changed.</td>
+<td>Public project maintenance.</td>
+<td>docs</td>
+</tr>
+<tr>
+<td>Compressed Context</td>
+<td>A compact context block that can be pasted into a future AI session.</td>
+<td>Long-running project memory.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Context Rehydration</td>
+<td>Restoring a future AI session from compressed context and canonical docs.</td>
+<td>Useful project workflow.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Conversation Archaeology</td>
+<td>Searching old chats for reusable decisions, phrases, and ideas.</td>
+<td>Good Almanac phrase.</td>
+<td>knowledge-capture</td>
+</tr>
+<tr>
+<td>Canonicalization Pass</td>
+<td>Turning messy extracted ideas into structured wiki entries.</td>
+<td>Important process stage.</td>
+<td>wiki</td>
+</tr>
+<tr>
+<td>Redact Then Publish</td>
+<td>Workflow phrase: sanitize before making public.</td>
+<td>Privacy macro.</td>
+<td>prompt-macro</td>
+</tr>
+<tr>
+<td>Preserve First, Distill Second</td>
+<td>Workflow principle for no-loss capture.</td>
+<td>Core capture doctrine.</td>
+<td>prompt-macro</td>
+</tr>
+<tr>
+<td>Extract, Don’t Summarize</td>
+<td>Prompt phrase that prevents lossy summaries.</td>
+<td>Excellent macro.</td>
+<td>prompt-macro</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="g-rag-retrieval-and-knowledge-systems">G. RAG, Retrieval, and Knowledge Systems<a class="headerlink" href="#g-rag-retrieval-and-knowledge-systems" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RAG</td>
+<td>Retrieval-Augmented Generation; fetching relevant external context before generation.</td>
+<td>Core AI engineering architecture.</td>
+<td>rag</td>
+</tr>
+<tr>
+<td>Embedding</td>
+<td>Dense vector representation of text/image/audio for similarity search.</td>
+<td>Core retrieval term.</td>
+<td>embeddings</td>
+</tr>
+<tr>
+<td>Vector Database</td>
+<td>Database optimized for storing/searching embeddings.</td>
+<td>Common AI app component.</td>
+<td>vector-db</td>
+</tr>
+<tr>
+<td>ANN Search</td>
+<td>Approximate nearest-neighbor search over vectors.</td>
+<td>Explains vector DB performance.</td>
+<td>vector-search</td>
+</tr>
+<tr>
+<td>HNSW</td>
+<td>Graph-based ANN index often used for vector search.</td>
+<td>Important technical term.</td>
+<td>vector-search</td>
+</tr>
+<tr>
+<td>IVF</td>
+<td>Inverted-file index strategy for vector search.</td>
+<td>Retrieval architecture term.</td>
+<td>vector-search</td>
+</tr>
+<tr>
+<td>Cosine Similarity</td>
+<td>Similarity measure based on vector angle.</td>
+<td>Common embedding metric.</td>
+<td>embeddings</td>
+</tr>
+<tr>
+<td>Dot Product</td>
+<td>Vector similarity/scoring operation.</td>
+<td>Common embedding metric.</td>
+<td>embeddings</td>
+</tr>
+<tr>
+<td>BM25</td>
+<td>Classic keyword search ranking algorithm.</td>
+<td>Needed for hybrid search.</td>
+<td>search</td>
+</tr>
+<tr>
+<td>Hybrid Search</td>
+<td>Combining keyword and semantic/vector search.</td>
+<td>Practical retrieval best practice.</td>
+<td>search</td>
+</tr>
+<tr>
+<td>Reranker</td>
+<td>Model/stage that reorders retrieved candidates for relevance.</td>
+<td>Improves retrieval quality.</td>
+<td>rag</td>
+</tr>
+<tr>
+<td>Chunk</td>
+<td>A section of a document indexed/retrieved as a unit.</td>
+<td>Core RAG term.</td>
+<td>rag</td>
+</tr>
+<tr>
+<td>Chunking Strategy</td>
+<td>How documents are split into retrievable chunks.</td>
+<td>Affects RAG quality.</td>
+<td>rag</td>
+</tr>
+<tr>
+<td>Chunk Overlap</td>
+<td>Repeated text across adjacent chunks to preserve context.</td>
+<td>Common RAG tuning knob.</td>
+<td>rag</td>
+</tr>
+<tr>
+<td>Metadata Filter</td>
+<td>Filtering retrieval by document attributes like date, source, tenant, tags.</td>
+<td>Production retrieval.</td>
+<td>rag</td>
+</tr>
+<tr>
+<td>Query Expansion</td>
+<td>Rewriting/expanding a query to improve recall.</td>
+<td>Search quality.</td>
+<td>rag</td>
+</tr>
+<tr>
+<td>Query Decomposition</td>
+<td>Breaking complex questions into subqueries.</td>
+<td>Deep research / multi-hop retrieval.</td>
+<td>rag</td>
+</tr>
+<tr>
+<td>Multi-Hop Retrieval</td>
+<td>Retrieval where answer requires multiple pieces of evidence.</td>
+<td>Advanced RAG.</td>
+<td>rag</td>
+</tr>
+<tr>
+<td>Citation Span</td>
+<td>Exact source passage supporting a claim.</td>
+<td>Trust and public wiki.</td>
+<td>citations</td>
+</tr>
+<tr>
+<td>Source Fidelity</td>
+<td>How accurately output reflects source material.</td>
+<td>Evals/trust.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Groundedness Score</td>
+<td>Evaluation of whether claims are supported by evidence.</td>
+<td>RAG evals.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Retrieval Audit</td>
+<td>Inspecting what docs were retrieved and why.</td>
+<td>Debugging RAG.</td>
+<td>observability</td>
+</tr>
+<tr>
+<td>Semantic Cache</td>
+<td>Cache keyed by meaning/similarity instead of exact string.</td>
+<td>Performance/cost optimization.</td>
+<td>caching</td>
+</tr>
+<tr>
+<td>Context Stuffing</td>
+<td>Dumping too much context into a prompt without selection.</td>
+<td>Common RAG mistake.</td>
+<td>anti-pattern</td>
+</tr>
+<tr>
+<td>Lost in the Middle</td>
+<td>Failure mode where models underuse information buried in long context.</td>
+<td>Context engineering.</td>
+<td>context</td>
+</tr>
+<tr>
+<td>Evidence Packet</td>
+<td>Bundle of relevant source excerpts used to answer a question.</td>
+<td>Useful prompt/RAG term.</td>
+<td>research</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="h-evaluation-guardrails-and-reliability">H. Evaluation, Guardrails, and Reliability<a class="headerlink" href="#h-evaluation-guardrails-and-reliability" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eval</td>
+<td>A test or benchmark measuring model/application behavior.</td>
+<td>Production AI foundation.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Golden Set</td>
+<td>Curated set of representative examples with expected outputs.</td>
+<td>Key eval asset.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Smoke Eval</td>
+<td>Lightweight eval run before deployment.</td>
+<td>Fast reliability check.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Regression Eval</td>
+<td>Eval designed to catch behavior regressions.</td>
+<td>Production AI testing.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Rubric</td>
+<td>Criteria used to judge output quality.</td>
+<td>Human/model grading.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Grader</td>
+<td>Human, code, or model that scores outputs.</td>
+<td>Evaluation architecture.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>LLM-as-Judge</td>
+<td>Using an LLM to score another output.</td>
+<td>Useful but needs calibration.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Calibration</td>
+<td>Aligning confidence/scores with real correctness.</td>
+<td>Reliability term.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Adversarial Eval</td>
+<td>Testing against hard, malicious, or edge-case inputs.</td>
+<td>Safety/reliability.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Red Teaming</td>
+<td>Actively trying to break a model/system.</td>
+<td>Safety and security.</td>
+<td>security</td>
+</tr>
+<tr>
+<td>Prompt Injection</td>
+<td>Malicious or conflicting instructions inserted through user/data context.</td>
+<td>Core AI security risk.</td>
+<td>security</td>
+</tr>
+<tr>
+<td>Indirect Prompt Injection</td>
+<td>Prompt injection hidden in external data fetched by tools/RAG.</td>
+<td>Critical for agents.</td>
+<td>security</td>
+</tr>
+<tr>
+<td>Jailbreak</td>
+<td>Attempt to bypass model/system safeguards.</td>
+<td>Safety vocabulary.</td>
+<td>security</td>
+</tr>
+<tr>
+<td>Tool Exfiltration</td>
+<td>Sensitive data leaking through tool use or outputs.</td>
+<td>Agent security.</td>
+<td>security</td>
+</tr>
+<tr>
+<td>Output Parser</td>
+<td>Code that validates/parses model output into expected format.</td>
+<td>Production reliability.</td>
+<td>schemas</td>
+</tr>
+<tr>
+<td>Refusal Handling</td>
+<td>Detecting and responding to model refusals gracefully.</td>
+<td>Production UX.</td>
+<td>safety</td>
+</tr>
+<tr>
+<td>Guardrail</td>
+<td>Policy/check that blocks, modifies, or escalates risky behavior.</td>
+<td>AI safety engineering.</td>
+<td>safety</td>
+</tr>
+<tr>
+<td>Human Review Queue</td>
+<td>Queue where uncertain/risky AI outputs await human approval.</td>
+<td>Governance.</td>
+<td>workflow</td>
+</tr>
+<tr>
+<td>Confidence Threshold</td>
+<td>Score threshold for action, review, or refusal.</td>
+<td>Decision systems.</td>
+<td>evals</td>
+</tr>
+<tr>
+<td>Rollback Plan</td>
+<td>Way to revert prompt/model/tool changes.</td>
+<td>Production safety.</td>
+<td>devops</td>
+</tr>
+<tr>
+<td>Canary Prompt Rollout</td>
+<td>Testing prompt changes on small traffic before full release.</td>
+<td>PromptOps.</td>
+<td>devops</td>
+</tr>
+<tr>
+<td>Drift Monitoring</td>
+<td>Watching output quality change over time.</td>
+<td>Production AI.</td>
+<td>monitoring</td>
+</tr>
+<tr>
+<td>Incident Review</td>
+<td>Postmortem after AI system failure.</td>
+<td>Reliability practice.</td>
+<td>reliability</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="i-engineering-reliability-systems-and-backend-terms">I. Engineering Reliability, Systems, and Backend Terms<a class="headerlink" href="#i-engineering-reliability-systems-and-backend-terms" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Idempotency</td>
+<td>Repeating an operation produces the same system state.</td>
+<td>Critical for retries/payments/APIs.</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>Backpressure</td>
+<td>Downstream service slows upstream producers to avoid overload.</td>
+<td>Core reliability term.</td>
+<td>systems</td>
+</tr>
+<tr>
+<td>Circuit Breaker</td>
+<td>Fails fast when dependency is unhealthy to prevent cascading failure.</td>
+<td>Distributed systems staple.</td>
+<td>reliability</td>
+</tr>
+<tr>
+<td>Rate Limiting</td>
+<td>Restricting request/action rate.</td>
+<td>Security/cost/reliability.</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>Debounce</td>
+<td>Delay action until rapid events stop.</td>
+<td>UI/API efficiency.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>Throttle</td>
+<td>Limit action frequency over time.</td>
+<td>UI/API efficiency.</td>
+<td>frontend</td>
+</tr>
+<tr>
+<td>Queue</td>
+<td>Buffer of work to process asynchronously.</td>
+<td>Systems design.</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>Dead-Letter Queue</td>
+<td>Queue for failed messages that need inspection/retry.</td>
+<td>Reliability.</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>Retry with Exponential Backoff</td>
+<td>Retry strategy with increasing delays.</td>
+<td>Network/API resilience.</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>Timeout</td>
+<td>Maximum time allowed before giving up.</td>
+<td>Reliability.</td>
+<td>backend</td>
+</tr>
+<tr>
+<td>Fallback</td>
+<td>Alternate behavior when primary path fails.</td>
+<td>Resilience.</td>
+<td>reliability</td>
+</tr>
+<tr>
+<td>Bulkhead</td>
+<td>Isolation pattern limiting failure spread.</td>
+<td>Distributed systems.</td>
+<td>reliability</td>
+</tr>
+<tr>
+<td>SLI</td>
+<td>Service Level Indicator; measured reliability metric.</td>
+<td>SRE.</td>
+<td>observability</td>
+</tr>
+<tr>
+<td>SLO</td>
+<td>Service Level Objective; target reliability goal.</td>
+<td>SRE.</td>
+<td>observability</td>
+</tr>
+<tr>
+<td>SLA</td>
+<td>Service Level Agreement; external/customer commitment.</td>
+<td>SRE/business.</td>
+<td>reliability</td>
+</tr>
+<tr>
+<td>Observability</td>
+<td>Ability to understand system state from outputs.</td>
+<td>Production operations.</td>
+<td>observability</td>
+</tr>
+<tr>
+<td>Trace</td>
+<td>End-to-end request/action path through services.</td>
+<td>Debugging.</td>
+<td>observability</td>
+</tr>
+<tr>
+<td>Span</td>
+<td>Unit of work inside a trace.</td>
+<td>Observability.</td>
+<td>observability</td>
+</tr>
+<tr>
+<td>Log</td>
+<td>Event record emitted by a system.</td>
+<td>Debugging.</td>
+<td>observability</td>
+</tr>
+<tr>
+<td>Metric</td>
+<td>Numeric measurement over time.</td>
+<td>Monitoring.</td>
+<td>observability</td>
+</tr>
+<tr>
+<td>Canary Deploy</td>
+<td>Rollout to small subset before wider release.</td>
+<td>Safer deployment.</td>
+<td>devops</td>
+</tr>
+<tr>
+<td>Blue/Green Deploy</td>
+<td>Switching traffic between two production environments.</td>
+<td>Deployment strategy.</td>
+<td>devops</td>
+</tr>
+<tr>
+<td>Feature Flag</td>
+<td>Runtime switch controlling feature behavior.</td>
+<td>Safe rollout.</td>
+<td>devops</td>
+</tr>
+<tr>
+<td>Kill Switch</td>
+<td>Emergency disable mechanism.</td>
+<td>Safety.</td>
+<td>devops</td>
+</tr>
+<tr>
+<td>Rollback</td>
+<td>Reverting to previous known-good state.</td>
+<td>Incident response.</td>
+<td>devops</td>
+</tr>
+<tr>
+<td>Chaos Engineering</td>
+<td>Controlled failure experiments to build resilience.</td>
+<td>Reliability testing.</td>
+<td>testing</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="j-wiki-public-database-schema-vocabulary">J. Wiki / Public Database Schema Vocabulary<a class="headerlink" href="#j-wiki-public-database-schema-vocabulary" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Short Definition</th>
+<th>Why Include</th>
+<th>Tags</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontmatter</td>
+<td>Machine-readable metadata at top of Markdown files.</td>
+<td>Bridges wiki and database.</td>
+<td>docs</td>
+</tr>
+<tr>
+<td>Slug</td>
+<td>URL-friendly identifier for an entry.</td>
+<td>Web/wiki structure.</td>
+<td>docs</td>
+</tr>
+<tr>
+<td>Alias</td>
+<td>Alternate name for a concept.</td>
+<td>Search and discoverability.</td>
+<td>docs</td>
+</tr>
+<tr>
+<td>Tag</td>
+<td>Label used for filtering/grouping entries.</td>
+<td>Wiki navigation.</td>
+<td>docs</td>
+</tr>
+<tr>
+<td>Backlink</td>
+<td>Link from one entry back to related/referencing entries.</td>
+<td>Knowledge graph.</td>
+<td>wiki</td>
+</tr>
+<tr>
+<td>Concept Graph</td>
+<td>Network of concepts and their relationships.</td>
+<td>Future interactive wiki.</td>
+<td>graph</td>
+</tr>
+<tr>
+<td>Relationship Type</td>
+<td>Type of link: related_to, confused_with, prerequisite_of, part_of, pattern_for.</td>
+<td>Enables graph UX.</td>
+<td>graph</td>
+</tr>
+<tr>
+<td>Status Lifecycle</td>
+<td>Draft → reviewed → canonical → deprecated.</td>
+<td>Content governance.</td>
+<td>docs</td>
+</tr>
+<tr>
+<td>Deprecated Entry</td>
+<td>Old term/page retained but no longer recommended.</td>
+<td>Avoids broken links.</td>
+<td>docs</td>
+</tr>
+<tr>
+<td>Canonical Source</td>
+<td>Preferred authoritative page/source for a concept.</td>
+<td>Trust.</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Source-Reported Claim</td>
+<td>Claim attributed to a source but not independently verified.</td>
+<td>Avoids overclaiming.</td>
+<td>research</td>
+</tr>
+<tr>
+<td>Public Digest</td>
+<td>Redacted publishable version of a private session.</td>
+<td>Privacy-preserving publishing.</td>
+<td>knowledge-capture</td>
+</tr>
+<tr>
+<td>Private Raw Archive</td>
+<td>Unpublished store of raw transcripts/material.</td>
+<td>Preservation without oversharing.</td>
+<td>archive</td>
+</tr>
+<tr>
+<td>Contributor Prompt</td>
+<td>Prompt/template that helps contributors submit new terms.</td>
+<td>Community growth.</td>
+<td>governance</td>
+</tr>
+<tr>
+<td>Entry Rubric</td>
+<td>Standard for accepting a term into canonical wiki.</td>
+<td>Quality control.</td>
+<td>governance</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="k-high-leverage-prompt-phrases-to-add">K. High-Leverage Prompt Phrases to Add<a class="headerlink" href="#k-high-leverage-prompt-phrases-to-add" title="Permanent link">&para;</a></h1>
+<p>These are not final prompts; they are candidate “prompt macros” that should each become a wiki entry or template.</p>
+<h2 id="spec-and-contract-macros">Spec and Contract Macros<a class="headerlink" href="#spec-and-contract-macros" title="Permanent link">&para;</a></h2>
+<pre><code class="language-md">Create a backend-ready frontend spec for this feature.
+
+Include:
+- mock screenshots or wireframes
+- user flow
+- UI component inventory
+- field-to-backend mapping
+- API contracts
+- request/response payloads
+- database schema
+- validation rules
+- loading, empty, success, and error states
+- permission matrix
+- analytics events
+- test cases
+- mock data fixtures
+</code></pre>
+<pre><code class="language-md">Turn this UI into backend requirements.
+
+Infer:
+- endpoints
+- data models
+- database tables
+- relationships
+- validation rules
+- auth/permissions
+- background jobs
+- audit logs
+- analytics events
+- edge cases
+</code></pre>
+<pre><code class="language-md">Create a field-to-backend mapping table for this screen.
+Map every UI element to frontend state, API field, backend DTO, database column, required flag, validation rule, and error message.
+</code></pre>
+<pre><code class="language-md">Build mock data that exactly matches the final API response schema.
+Do not use placeholder shapes that differ from production.
+</code></pre>
+<pre><code class="language-md">Identify frontend/backend integration risks before implementation.
+Look for missing fields, naming mismatches, enum drift, date/time inconsistencies, auth gaps, pagination ambiguity, and unclear error states.
+</code></pre>
+<h2 id="conversation-capture-macros">Conversation Capture Macros<a class="headerlink" href="#conversation-capture-macros" title="Permanent link">&para;</a></h2>
+<pre><code class="language-md">Convert this conversation into a no-loss session digest.
+
+Do not merely summarize.
+Preserve:
+- exact reusable phrases
+- decisions
+- concepts introduced
+- prompt macros
+- templates
+- artifacts
+- open questions
+- privacy risks
+- canonical wiki updates needed
+</code></pre>
+<pre><code class="language-md">Extract every reusable prompt phrase from this conversation and convert each into a prompt macro with name, use case, template, example input, expected output, and related concepts.
+</code></pre>
+<pre><code class="language-md">Perform a redaction pass before public release.
+Flag names, emails, credentials, private business details, internal plans, and unsupported claims.
+</code></pre>
+<pre><code class="language-md">Create a final compressed context block that can be pasted into a future AI session to continue this project without losing the important decisions.
+</code></pre>
+<h2 id="agent-workflow-macros">Agent Workflow Macros<a class="headerlink" href="#agent-workflow-macros" title="Permanent link">&para;</a></h2>
+<pre><code class="language-md">Turn this repeated workflow into a reusable AI skill.
+Include trigger phrases, instructions, required inputs, optional inputs, quality bar, examples, avoid-list, output format, and version number.
+</code></pre>
+<pre><code class="language-md">Create a product team of subagents for this feature:
+- Product Manager
+- UX Designer
+- Frontend Engineer
+- Backend Engineer
+- Security Reviewer
+- QA Tester
+Have each produce a short report, then synthesize the implementation plan.
+</code></pre>
+<pre><code class="language-md">Create a builder/critic loop.
+The Builder proposes the solution.
+The Critic tries to reject it by finding bugs, gaps, ambiguity, security issues, and missing tests.
+Repeat until the Critic has no material objections.
+</code></pre>
+<pre><code class="language-md">Define the agent’s exit criteria.
+Use concrete stopping conditions such as tests passing, screenshots verified, contract satisfied, docs updated, and no unresolved TODOs.
+</code></pre>
+<pre><code class="language-md">Run a fixed-pass improvement loop.
+Perform exactly three passes:
+1. correctness
+2. completeness
+3. simplification
+Then stop and report remaining risks.
+</code></pre>
+<h2 id="promptops-evals-macros">PromptOps / Evals Macros<a class="headerlink" href="#promptops-evals-macros" title="Permanent link">&para;</a></h2>
+<pre><code class="language-md">Before changing this production prompt, create representative fixtures, expected outputs, failure cases, and an evaluation rubric.
+</code></pre>
+<pre><code class="language-md">Version this prompt like code.
+Create:
+- prompt name
+- version
+- changelog
+- inputs
+- output schema
+- examples
+- evals
+- rollout plan
+- rollback plan
+</code></pre>
+<pre><code class="language-md">Generate a structured output schema for this task.
+Use clear key names, descriptions, required fields, enums where useful, and validation notes.
+</code></pre>
+<pre><code class="language-md">Create a prompt regression test suite that catches formatting drift, hallucinations, missing citations, schema failures, and tool-use mistakes.
+</code></pre>
+<h2 id="research-wiki-macros">Research / Wiki Macros<a class="headerlink" href="#research-wiki-macros" title="Permanent link">&para;</a></h2>
+<pre><code class="language-md">Mine this source for terms, but do not copy it.
+Extract reusable vocabulary, workflow patterns, prompt structures, aliases, and relationships.
+Rewrite everything in original language and cite the source.
+</code></pre>
+<pre><code class="language-md">Turn this messy note into a canonical wiki entry using the Almanac schema:
+Definition, Core Concept, Why It Matters, Real-World Example, Common Mistakes, Related Terms, Mental Model, Interview Explanation, Production Notes, Prompt Macros.
+</code></pre>
+<pre><code class="language-md">Find the hidden engineering vocabulary in this text.
+List jargon, acronyms, shorthand phrases, anti-patterns, workflow patterns, and terms that beginners would not know to search for.
+</code></pre>
+<pre><code class="language-md">Create a concept graph from these terms.
+Use relationship types:
+- prerequisite_of
+- related_to
+- confused_with
+- alternative_to
+- part_of
+- pattern_for
+- anti_pattern_of
+</code></pre>
+<hr />
+<h1 id="l-suggested-new-wiki-categories">L. Suggested New Wiki Categories<a class="headerlink" href="#l-suggested-new-wiki-categories" title="Permanent link">&para;</a></h1>
+<ol>
+<li><strong>AI Workflow Terminology</strong></li>
+<li><strong>Prompt Macros</strong></li>
+<li><strong>PromptOps</strong></li>
+<li><strong>Agent Engineering</strong></li>
+<li><strong>AI Skills and Reusable Workflows</strong></li>
+<li><strong>Frontend–Backend Contract Engineering</strong></li>
+<li><strong>Conversation Capture and Knowledge Distillation</strong></li>
+<li><strong>RAG and Retrieval</strong></li>
+<li><strong>Structured Outputs and Tool Use</strong></li>
+<li><strong>AI Evaluation and Guardrails</strong></li>
+<li><strong>Coding Agent Workflows</strong></li>
+<li><strong>Engineering Reliability</strong></li>
+<li><strong>Wiki Schema and Public Database Design</strong></li>
+<li><strong>AI Product Vocabulary</strong></li>
+<li><strong>AI Anti-Patterns</strong></li>
+</ol>
+<hr />
+<h1 id="m-first-canonical-entries-to-create">M. First Canonical Entries to Create<a class="headerlink" href="#m-first-canonical-entries-to-create" title="Permanent link">&para;</a></h1>
+<p>Prioritize these entries first because they form the backbone of the system:</p>
+<ol>
+<li>Prompt Macro</li>
+<li>AI Skill</li>
+<li>Session-to-Wiki Compiler</li>
+<li>No-Loss Distillation</li>
+<li>Backend-Ready Frontend Spec</li>
+<li>Field-to-Backend Mapping</li>
+<li>Contract-First Development</li>
+<li>Agent</li>
+<li>Subagent</li>
+<li>Agent Loop</li>
+<li>Exit Criteria</li>
+<li>Fixed-Pass Loop</li>
+<li>MCP</li>
+<li>Connector</li>
+<li>Function Calling</li>
+<li>Structured Outputs</li>
+<li>PromptOps</li>
+<li>Prompt Regression Test</li>
+<li>Eval</li>
+<li>Golden Set</li>
+<li>RAG</li>
+<li>Context Packet</li>
+<li>Source Fidelity</li>
+<li>Privacy Redaction Pass</li>
+<li>Canonical Entry</li>
+</ol>
+<hr />
+<h1 id="n-proposed-entry-schema">N. Proposed Entry Schema<a class="headerlink" href="#n-proposed-entry-schema" title="Permanent link">&para;</a></h1>
+<pre><code class="language-md">---
+id: term-slug
+title: Term Name
+category: Category
+status: seed | draft | reviewed | canonical | deprecated
+difficulty: beginner | intermediate | advanced
+aliases: []
+tags: []
+related: []
+confused_with: []
+prerequisites: []
+source_notes: []
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# Term Name
+
+## Definition
+
+## Core Concept
+
+## Why It Matters
+
+## Real-World Example
+
+## Common Mistakes
+
+## Related Terms
+
+## Mental Model
+
+## Interview Explanation
+
+## Production Notes
+
+## Prompt Macros
+
+## See Also
+
+## Source Notes
+</code></pre>
+<hr />
+<h1 id="o-research-backlog-sources">O. Research Backlog Sources<a class="headerlink" href="#o-research-backlog-sources" title="Permanent link">&para;</a></h1>
+<p>Suggested sources to mine next:</p>
+<ul>
+<li>The Neuron Daily archive</li>
+<li>The Neuron explainer articles</li>
+<li>OpenAI developer docs</li>
+<li>Anthropic Claude docs</li>
+<li>Google Gemini docs</li>
+<li>MCP docs</li>
+<li>LangChain docs</li>
+<li>LlamaIndex docs</li>
+<li>Vercel AI SDK docs</li>
+<li>Microsoft AutoGen / Semantic Kernel docs</li>
+<li>Hugging Face docs</li>
+<li>NVIDIA CUDA / inference optimization docs</li>
+<li>Kubernetes docs</li>
+<li>Google SRE book</li>
+<li>AWS Well-Architected Framework</li>
+<li>Martin Fowler architecture terms</li>
+<li>OWASP Top 10 and OWASP LLM Top 10</li>
+<li>Papers With Code task pages</li>
+<li>arXiv papers on agents, RAG, evals, tool use, and prompt optimization</li>
+</ul>
+<hr />
+<h1 id="p-research-batch-notes">P. Research Batch Notes<a class="headerlink" href="#p-research-batch-notes" title="Permanent link">&para;</a></h1>
+<p>The biggest insight from this batch:</p>
+<blockquote>
+<p>The Almanac should not only define technical terms. It should define <strong>workflow phrases</strong> that help users get more value from AI systems.</p>
+</blockquote>
+<p>Examples:
+- “Turn this into a skill.”
+- “Make this backend-ready.”
+- “Define done.”
+- “Run a fixed-pass loop.”
+- “Create a verifier.”
+- “Preserve first, distill second.”
+- “Extract, don’t summarize.”
+- “Mock data must match the final API.”
+- “Verify it, don’t just test it.”</p>
+<p>That is the differentiator. A normal glossary explains terms. This Almanac teaches users the phrases that make AI-assisted engineering faster.</p>
+<hr />
+<h1 id="q-conversation-extraction-durable-knowledge-objects">Q. Conversation Extraction — Durable Knowledge Objects<a class="headerlink" href="#q-conversation-extraction-durable-knowledge-objects" title="Permanent link">&para;</a></h1>
+<p><em>Date extracted: 2026-06-26</em>
+<em>Source session: AI Engineering Almanac project seed conversation</em>
+<em>Status: project-memory / ready for canonicalization</em></p>
+<h2 id="q1-session-summary">Q1. Session Summary<a class="headerlink" href="#q1-session-summary" title="Permanent link">&para;</a></h2>
+<p>This conversation established the AI Engineering Almanac as more than a glossary. It is becoming a public, versioned engineering knowledge base containing:</p>
+<ul>
+<li>canonical technical terms,</li>
+<li>AI workflow phrases,</li>
+<li>prompt macros,</li>
+<li>production engineering patterns,</li>
+<li>frontend/backend contract templates,</li>
+<li>conversation-to-wiki capture workflows,</li>
+<li>source strategy and editorial rules,</li>
+<li>generated diagrams and teaching artifacts.</li>
+</ul>
+<p>The strongest emerging product idea is:</p>
+<blockquote>
+<p>A public, searchable, GitHub-backed wiki/database of AI engineering vocabulary, workflow phrases, implementation templates, and source-verified canonical entries.</p>
+</blockquote>
+<p>The strongest process idea is:</p>
+<blockquote>
+<p>Extract, don’t summarize: preserve the useful objects from a conversation before compressing them into polished pages.</p>
+</blockquote>
+<hr />
+<h2 id="q2-canonical-terms-extracted-from-this-session">Q2. Canonical Terms Extracted From This Session<a class="headerlink" href="#q2-canonical-terms-extracted-from-this-session" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Type</th>
+<th>Draft Definition</th>
+<th>Priority</th>
+<th>Suggested Category</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI Engineering Almanac</td>
+<td>project concept</td>
+<td>A public, versioned knowledge base for AI engineering terms, workflow phrases, prompt macros, and production patterns.</td>
+<td>P0</td>
+<td>project-meta</td>
+</tr>
+<tr>
+<td>AI Engineering Bible</td>
+<td>alias</td>
+<td>Informal name for a comprehensive, practical reference that teaches both terminology and how to use it.</td>
+<td>P1</td>
+<td>project-meta</td>
+</tr>
+<tr>
+<td>Workflow Phrase</td>
+<td>concept</td>
+<td>A short phrase that triggers a repeatable AI-assisted workflow, such as “make this backend-ready.”</td>
+<td>P0</td>
+<td>prompt-macros</td>
+</tr>
+<tr>
+<td>Prompt Macro</td>
+<td>concept</td>
+<td>A reusable instruction pattern that converts vague intent into a structured workflow.</td>
+<td>P0</td>
+<td>prompt-macros</td>
+</tr>
+<tr>
+<td>Engineering Accelerator Phrase</td>
+<td>concept</td>
+<td>A phrase that speeds up implementation by forcing hidden requirements into explicit artifacts.</td>
+<td>P0</td>
+<td>prompt-macros</td>
+</tr>
+<tr>
+<td>Backend-Ready Frontend Spec</td>
+<td>canonical term</td>
+<td>A frontend feature specification detailed enough for backend implementation without waiting for final UI wiring.</td>
+<td>P0</td>
+<td>frontend-backend-contracts</td>
+</tr>
+<tr>
+<td>Frontend–Backend Contract Engineering</td>
+<td>category</td>
+<td>The discipline of aligning UI fields, API payloads, backend types, database columns, validation, permissions, and error states before implementation.</td>
+<td>P0</td>
+<td>frontend-backend-contracts</td>
+</tr>
+<tr>
+<td>Field-to-Backend Mapping</td>
+<td>canonical term</td>
+<td>A table mapping each UI element to frontend state, API field, backend type, database column, validation, and error behavior.</td>
+<td>P0</td>
+<td>frontend-backend-contracts</td>
+</tr>
+<tr>
+<td>Mock Screenshot</td>
+<td>canonical term</td>
+<td>A rough visual/wireframe screen representation used to extract backend requirements and user flows.</td>
+<td>P0</td>
+<td>frontend-backend-contracts</td>
+</tr>
+<tr>
+<td>Backend Requirements Extractor</td>
+<td>phrase/concept</td>
+<td>A mock screen or UI spec that reveals APIs, data models, permissions, and edge cases.</td>
+<td>P1</td>
+<td>frontend-backend-contracts</td>
+</tr>
+<tr>
+<td>API Contract</td>
+<td>canonical term</td>
+<td>The formal agreement between frontend and backend for endpoint paths, request/response schemas, errors, auth, and side effects.</td>
+<td>P0</td>
+<td>api-design</td>
+</tr>
+<tr>
+<td>Contract-First Development</td>
+<td>canonical term</td>
+<td>Defining interfaces, schemas, and expected behaviors before frontend and backend implementation.</td>
+<td>P0</td>
+<td>api-design</td>
+</tr>
+<tr>
+<td>Schema-First Development</td>
+<td>canonical term</td>
+<td>Designing data schemas before implementation, often using OpenAPI, GraphQL, Prisma, Zod, JSON Schema, or Protocol Buffers.</td>
+<td>P1</td>
+<td>api-design</td>
+</tr>
+<tr>
+<td>Integration-Ready Backend</td>
+<td>canonical term</td>
+<td>A backend that can be connected to the frontend with minimal debugging because payloads, validation, errors, permissions, and response shapes match the frontend spec.</td>
+<td>P0</td>
+<td>frontend-backend-contracts</td>
+</tr>
+<tr>
+<td>Mock API</td>
+<td>canonical term</td>
+<td>A fake or stub API that returns data matching the final contract.</td>
+<td>P1</td>
+<td>frontend-backend-contracts</td>
+</tr>
+<tr>
+<td>Fixture Fidelity</td>
+<td>concept</td>
+<td>The degree to which mock data matches the final API and realistic production values.</td>
+<td>P1</td>
+<td>testing</td>
+</tr>
+<tr>
+<td>Frontend–Backend Handoff Packet</td>
+<td>canonical term</td>
+<td>A complete feature package containing screens, flows, fields, APIs, schemas, validations, permissions, states, analytics, and tests.</td>
+<td>P0</td>
+<td>frontend-backend-contracts</td>
+</tr>
+<tr>
+<td>State Matrix</td>
+<td>canonical term</td>
+<td>A table defining loading, empty, success, validation error, permission error, and unexpected failure states.</td>
+<td>P1</td>
+<td>frontend-backend-contracts</td>
+</tr>
+<tr>
+<td>Conversation Capture</td>
+<td>category</td>
+<td>The practice of extracting durable knowledge, decisions, templates, and artifacts from a conversation.</td>
+<td>P0</td>
+<td>conversation-capture</td>
+</tr>
+<tr>
+<td>Durable Knowledge Object</td>
+<td>canonical term</td>
+<td>A reusable object extracted from a conversation, such as a term, prompt macro, decision, template, artifact, source note, or follow-up page.</td>
+<td>P0</td>
+<td>conversation-capture</td>
+</tr>
+<tr>
+<td>Session-to-Wiki Compiler</td>
+<td>canonical term</td>
+<td>A workflow that turns a conversation into canonical wiki entries, templates, prompt macros, decision logs, and source notes.</td>
+<td>P0</td>
+<td>conversation-capture</td>
+</tr>
+<tr>
+<td>No-Loss Distillation</td>
+<td>canonical term</td>
+<td>A capture method that preserves raw details first, then compresses them into summaries and canonical entries.</td>
+<td>P0</td>
+<td>conversation-capture</td>
+</tr>
+<tr>
+<td>Extract, Don’t Summarize</td>
+<td>doctrine / macro</td>
+<td>A workflow principle: convert a conversation into structured durable objects instead of producing a lossy summary.</td>
+<td>P0</td>
+<td>conversation-capture</td>
+</tr>
+<tr>
+<td>Preserve First, Distill Second</td>
+<td>doctrine / macro</td>
+<td>Save raw useful material before turning it into polished knowledge.</td>
+<td>P0</td>
+<td>conversation-capture</td>
+</tr>
+<tr>
+<td>Source Tiering</td>
+<td>editorial term</td>
+<td>Classifying sources by how they should be used: discovery, canonical definition, examples, commentary, or deprecated claims.</td>
+<td>P0</td>
+<td>source-strategy</td>
+</tr>
+<tr>
+<td>Discovery Source</td>
+<td>editorial term</td>
+<td>A source used to discover emerging vocabulary, not necessarily to define it canonically.</td>
+<td>P0</td>
+<td>source-strategy</td>
+</tr>
+<tr>
+<td>Canonical Source</td>
+<td>editorial term</td>
+<td>An official doc, standard, paper, or authoritative reference used for final definitions.</td>
+<td>P0</td>
+<td>source-strategy</td>
+</tr>
+<tr>
+<td>Source Note</td>
+<td>editorial term</td>
+<td>Metadata linking a wiki entry to the session, primary docs, discovery sources, and confidence level.</td>
+<td>P0</td>
+<td>source-strategy</td>
+</tr>
+<tr>
+<td>Canonical Entry</td>
+<td>wiki term</td>
+<td>A polished, structured page for a concept, using the entry schema and source notes.</td>
+<td>P0</td>
+<td>wiki-schema</td>
+</tr>
+<tr>
+<td>Docs-as-Database</td>
+<td>architecture term</td>
+<td>Treating Markdown files with YAML frontmatter as a public database that can later power an interactive wiki.</td>
+<td>P0</td>
+<td>wiki-schema</td>
+</tr>
+<tr>
+<td>GitHub-as-Source-of-Truth</td>
+<td>architecture term</td>
+<td>Using GitHub as the canonical storage, version history, review workflow, and contribution layer for the Almanac.</td>
+<td>P0</td>
+<td>wiki-schema</td>
+</tr>
+<tr>
+<td>Public Knowledge Base</td>
+<td>architecture term</td>
+<td>The public-facing documentation/wiki generated from the source repository.</td>
+<td>P0</td>
+<td>wiki-schema</td>
+</tr>
+<tr>
+<td>Research Batch</td>
+<td>project artifact</td>
+<td>A scoped bundle of raw candidate terms, source notes, and editorial observations for later canonicalization.</td>
+<td>P1</td>
+<td>research-process</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="q3-prompt-macros-extracted-from-this-session">Q3. Prompt Macros Extracted From This Session<a class="headerlink" href="#q3-prompt-macros-extracted-from-this-session" title="Permanent link">&para;</a></h2>
+<h3 id="macro-1-backend-ready-frontend-spec">Macro 1 — Backend-Ready Frontend Spec<a class="headerlink" href="#macro-1-backend-ready-frontend-spec" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Generate a backend-ready frontend spec for this feature.
+
+Include:
+1. Mock screenshots or wireframes
+2. User flow
+3. Every visible field
+4. Field-to-backend mapping
+5. API endpoints required
+6. Request and response payloads
+7. Database tables and columns
+8. Validation rules
+9. Empty states
+10. Loading states
+11. Error states
+12. Permission rules
+13. Analytics events
+14. Test cases
+15. Mock data fixtures
+</code></pre>
+<h3 id="macro-2-include-mock-screenshots-and-field-to-backend-mappings">Macro 2 — Include Mock Screenshots and Field-to-Backend Mappings<a class="headerlink" href="#macro-2-include-mock-screenshots-and-field-to-backend-mappings" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Include mock screenshots and field-to-backend mappings so the backend can be built against a stable contract before the frontend is fully wired.
+</code></pre>
+<h3 id="macro-3-turn-ui-into-backend-requirements">Macro 3 — Turn UI Into Backend Requirements<a class="headerlink" href="#macro-3-turn-ui-into-backend-requirements" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Given this screen or wireframe, infer all backend requirements, including APIs, database tables, relationships, permissions, validation rules, background jobs, and analytics events.
+</code></pre>
+<h3 id="macro-4-mock-data-must-match-final-api">Macro 4 — Mock Data Must Match Final API<a class="headerlink" href="#macro-4-mock-data-must-match-final-api" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Generate realistic mock data fixtures that exactly match the planned API response schema so the frontend can be built independently from the backend.
+</code></pre>
+<h3 id="macro-5-create-api-contract-before-code">Macro 5 — Create API Contract Before Code<a class="headerlink" href="#macro-5-create-api-contract-before-code" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Before implementing, define the full API contract, including endpoint names, request bodies, response bodies, error responses, auth requirements, side effects, idempotency behavior, and example payloads.
+</code></pre>
+<h3 id="macro-6-frontend-integration-checklist">Macro 6 — Frontend Integration Checklist<a class="headerlink" href="#macro-6-frontend-integration-checklist" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Create a frontend integration checklist for this endpoint, including payload shape, auth headers, error handling, pagination, caching, retries, loading states, empty states, permission failures, and edge cases.
+</code></pre>
+<h3 id="macro-7-extract-conversation-into-durable-knowledge-objects">Macro 7 — Extract Conversation Into Durable Knowledge Objects<a class="headerlink" href="#macro-7-extract-conversation-into-durable-knowledge-objects" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Extract this conversation into durable knowledge objects:
+- canonical terms
+- prompt macros
+- decisions
+- templates
+- artifacts
+- open questions
+- source notes
+- follow-up wiki entries
+
+Preserve details first, then create a concise session digest.
+</code></pre>
+<h3 id="macro-8-session-to-wiki-compiler">Macro 8 — Session-to-Wiki Compiler<a class="headerlink" href="#macro-8-session-to-wiki-compiler" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Convert this session into wiki-ready project memory.
+
+Output:
+1. Session digest
+2. New candidate terms
+3. Canonical entries to create
+4. Prompt macros
+5. Templates
+6. Decisions and rationale
+7. Artifacts created
+8. Source notes
+9. Open questions
+10. Next actions
+11. Public/private redaction notes
+</code></pre>
+<h3 id="macro-9-redact-then-publish">Macro 9 — Redact Then Publish<a class="headerlink" href="#macro-9-redact-then-publish" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Before publishing this session, separate public knowledge from private context. Remove private names, credentials, private URLs, personal data, secrets, unreleased plans, and any copyrighted source text that should only be paraphrased.
+</code></pre>
+<h3 id="macro-10-source-strategy-rule">Macro 10 — Source Strategy Rule<a class="headerlink" href="#macro-10-source-strategy-rule" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Use newsletters and explainers for vocabulary discovery.
+Use official docs, research papers, and standards for canonical definitions.
+Mark unverified claims as source-reported until confirmed by primary sources.
+</code></pre>
+<h3 id="macro-11-define-done">Macro 11 — Define Done<a class="headerlink" href="#macro-11-define-done" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Define done for this workflow. Include success criteria, exit criteria, quality bar, tests, artifacts, and what should not be attempted in this pass.
+</code></pre>
+<h3 id="macro-12-build-the-verifier">Macro 12 — Build the Verifier<a class="headerlink" href="#macro-12-build-the-verifier" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">Create a verifier for this output. The verifier should check factual accuracy, schema adherence, missing requirements, edge cases, source coverage, and production readiness.
+</code></pre>
+<hr />
+<h2 id="q4-decisions-made">Q4. Decisions Made<a class="headerlink" href="#q4-decisions-made" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Rationale</th>
+<th>Status</th>
+<th>Follow-Up</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Use GitHub as the source of truth.</td>
+<td>Git gives version history, diffs, PRs, issues, public collaboration, and future automation hooks.</td>
+<td>Accepted</td>
+<td>Seed <code>doncazper/ai-engineering-almanac</code> with docs.</td>
+</tr>
+<tr>
+<td>Do not use GitHub Wiki as the primary public database.</td>
+<td>GitHub Wiki is useful for lightweight docs, but the Almanac needs SEO, many files, structured metadata, and future interactivity.</td>
+<td>Accepted</td>
+<td>Use repo docs + GitHub Pages instead.</td>
+</tr>
+<tr>
+<td>Keep content in Markdown with YAML frontmatter.</td>
+<td>Markdown is human-editable and frontmatter makes the content machine-readable for a future interactive wiki.</td>
+<td>Accepted</td>
+<td>Create canonical entry template.</td>
+</tr>
+<tr>
+<td>Treat the docs folder as a public database.</td>
+<td>Each page becomes a queryable record later.</td>
+<td>Accepted</td>
+<td>Add <code>data/terms.yml</code> or generated JSON index later.</td>
+</tr>
+<tr>
+<td>Use newsletters/explainers for discovery, not final definitions.</td>
+<td>Newsletters capture live vocabulary, but canonical pages need stronger sources.</td>
+<td>Accepted</td>
+<td>Create source tier labels.</td>
+</tr>
+<tr>
+<td>Add Conversation Capture as a first-class Almanac category.</td>
+<td>The project needs to preserve high-value AI conversations without losing information.</td>
+<td>Accepted</td>
+<td>Create session-to-wiki compiler page.</td>
+</tr>
+<tr>
+<td>Add Frontend–Backend Contract Engineering as a first-class category.</td>
+<td>It captures a practical engineering accelerator that can save hours of integration debugging.</td>
+<td>Accepted</td>
+<td>Create first canonical entries.</td>
+</tr>
+<tr>
+<td>Use prompt macros as a separate content type from glossary terms.</td>
+<td>Prompt macros are operational commands, not just definitions.</td>
+<td>Accepted</td>
+<td>Create <code>docs/prompt-macros/</code>.</td>
+</tr>
+<tr>
+<td>Add artifacts as public teaching assets.</td>
+<td>Diagrams and screenshots make the Almanac more useful than a text glossary.</td>
+<td>Accepted</td>
+<td>Put image assets in <code>assets/</code>.</td>
+</tr>
+<tr>
+<td>Use status labels.</td>
+<td>Prevents draft notes from being mistaken for verified canonical definitions.</td>
+<td>Accepted</td>
+<td><code>seed</code>, <code>draft</code>, <code>reviewed</code>, <code>verified</code>, <code>canonical</code>, <code>deprecated</code>.</td>
+</tr>
+<tr>
+<td>Preserve raw/private session notes separately from public pages.</td>
+<td>Conversation capture can include private or messy details.</td>
+<td>Accepted</td>
+<td>Add redaction workflow.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="q5-templates-created-needed">Q5. Templates Created / Needed<a class="headerlink" href="#q5-templates-created-needed" title="Permanent link">&para;</a></h2>
+<h3 id="template-a-canonical-entry">Template A — Canonical Entry<a class="headerlink" href="#template-a-canonical-entry" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">---
+id: term-slug
+title: Term Name
+category: category-name
+status: seed | draft | reviewed | verified | canonical | deprecated
+difficulty: beginner | intermediate | advanced
+aliases: []
+tags: []
+related: []
+confused_with: []
+prerequisites: []
+source_tier: canonical | discovery | mixed | unsourced
+canonical_sources: []
+discovery_sources: []
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# Term Name
+
+## Definition
+
+## Core Concept
+
+## Why It Matters
+
+## Real-World Example
+
+## Common Mistakes
+
+## Related Terms
+
+## Mental Model
+
+## Interview Explanation
+
+## Production Notes
+
+## Prompt Macros
+
+## See Also
+
+## Source Notes
+</code></pre>
+<h3 id="template-b-prompt-macro">Template B — Prompt Macro<a class="headerlink" href="#template-b-prompt-macro" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">---
+id: macro-slug
+title: Prompt Macro Name
+type: prompt-macro
+status: seed | draft | reviewed | canonical
+category: prompt-macros
+aliases: []
+tags: []
+inputs: []
+outputs: []
+related_terms: []
+created: YYYY-MM-DD
+updated: YYYY-MM-DD
+---
+
+# Prompt Macro Name
+
+## Use When
+
+## Prompt
+
+```md
+Pasteable prompt here.
+</code></pre>
+<h2 id="inputs-needed">Inputs Needed<a class="headerlink" href="#inputs-needed" title="Permanent link">&para;</a></h2>
+<h2 id="output-should-include">Output Should Include<a class="headerlink" href="#output-should-include" title="Permanent link">&para;</a></h2>
+<h2 id="why-it-works">Why It Works<a class="headerlink" href="#why-it-works" title="Permanent link">&para;</a></h2>
+<h2 id="common-failure-modes">Common Failure Modes<a class="headerlink" href="#common-failure-modes" title="Permanent link">&para;</a></h2>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<h2 id="related-terms">Related Terms<a class="headerlink" href="#related-terms" title="Permanent link">&para;</a></h2>
+<pre><code>
+### Template C — Conversation Capture Packet
+
+```md
+# Session Capture Packet
+
+## Session Metadata
+- Date:
+- Project:
+- Privacy level:
+- Public-safe summary:
+
+## Session Digest
+
+## Canonical Terms
+
+## Prompt Macros
+
+## Decisions
+
+## Templates
+
+## Artifacts
+
+## Source Notes
+
+## Open Questions
+
+## Follow-Up Wiki Entries
+
+## Redaction Notes
+
+## Next Actions
+</code></pre>
+<h3 id="template-d-frontendbackend-handoff-packet">Template D — Frontend–Backend Handoff Packet<a class="headerlink" href="#template-d-frontendbackend-handoff-packet" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md"># Feature Handoff Packet
+
+## Feature Summary
+
+## User Stories
+
+## Mock Screens / Wireframes
+
+## User Flow
+
+## UI Element Inventory
+
+## Field-to-Backend Mapping
+
+| UI Element | Frontend State | API Field | Backend Type | DB Column | Required | Validation | Error State |
+|---|---|---|---|---|---|---|---|
+
+## API Contracts
+
+## Database Schema
+
+## Auth &amp; Permissions
+
+## Loading / Empty / Success / Error States
+
+## Analytics Events
+
+## Test Plan
+
+## Mock Fixtures
+
+## Edge Cases
+
+## Rollout Notes
+</code></pre>
+<h3 id="template-e-source-note">Template E — Source Note<a class="headerlink" href="#template-e-source-note" title="Permanent link">&para;</a></h3>
+<pre><code class="language-md">## Source Notes
+
+| Source | Tier | Use | Notes |
+|---|---|---|---|
+| Official docs / standard / paper | Canonical | Definition and production guidance | Preferred for final wording. |
+| Newsletter / explainer / blog | Discovery | Emerging vocabulary and user-facing phrasing | Do not copy. Paraphrase and verify. |
+| Community discussion | Anecdotal | Common confusion and slang | Mark as anecdotal. |
+| Internal session | Project memory | Origin of our framing/templates | Redact before publishing. |
+</code></pre>
+<hr />
+<h2 id="q6-artifacts-created-so-far">Q6. Artifacts Created So Far<a class="headerlink" href="#q6-artifacts-created-so-far" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>File / Location</th>
+<th>Type</th>
+<th>Public?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Research Batch 01</td>
+<td><code>ai_engineering_almanac_research_batch_01.md</code></td>
+<td>Markdown research batch</td>
+<td>Yes, after review</td>
+<td>Seed corpus of candidate terms.</td>
+</tr>
+<tr>
+<td>Updated Research Batch 01</td>
+<td><code>ai_engineering_almanac_research_batch_01_updated.md</code></td>
+<td>Markdown research batch</td>
+<td>Yes, after review</td>
+<td>Includes this conversation extraction.</td>
+</tr>
+<tr>
+<td>Frontend–Backend Mapping Graphic</td>
+<td><code>frontend_backend_mapping_guide.png</code></td>
+<td>Image</td>
+<td>Yes</td>
+<td>Pretty visual asset for docs/slides/wiki.</td>
+</tr>
+<tr>
+<td>GitHub Repo</td>
+<td><code>doncazper/ai-engineering-almanac</code></td>
+<td>Public repository</td>
+<td>Yes</td>
+<td>Empty at extraction time; should become source of truth.</td>
+</tr>
+<tr>
+<td>Deep Research Task 01</td>
+<td>Deep Research session</td>
+<td>Research run</td>
+<td>Maybe</td>
+<td>Broad seed research for Almanac terms.</td>
+</tr>
+<tr>
+<td>Deep Research Task 02</td>
+<td>Deep Research session</td>
+<td>Research run</td>
+<td>Maybe</td>
+<td>Expanded research across A–O sections.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="q7-open-questions">Q7. Open Questions<a class="headerlink" href="#q7-open-questions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Why It Matters</th>
+<th>Default Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Should the public docs use MkDocs Material, Docusaurus, or a custom Next.js app?</td>
+<td>Determines build complexity and future interactivity.</td>
+<td>Start with MkDocs Material for speed; migrate to Docusaurus/Next.js only if interactivity demands it.</td>
+</tr>
+<tr>
+<td>What license should the content use?</td>
+<td>Determines reuse rights.</td>
+<td>Consider CC BY 4.0 for content and MIT for code, but decide explicitly before accepting outside contributions.</td>
+</tr>
+<tr>
+<td>What counts as “canonical”?</td>
+<td>Prevents weak or trend-only definitions from becoming final.</td>
+<td>Require at least one authoritative source for verified/canonical status.</td>
+</tr>
+<tr>
+<td>How much newsletter-derived phrasing can be used?</td>
+<td>Copyright and attribution.</td>
+<td>Use newsletters only for discovery; paraphrase and cite.</td>
+</tr>
+<tr>
+<td>How should private sessions be handled?</td>
+<td>Avoids leaking private context.</td>
+<td>Store public session digests only; never publish raw private transcripts without redaction.</td>
+</tr>
+<tr>
+<td>Should the Almanac include personal productivity opinions?</td>
+<td>The project is practical, but needs trust.</td>
+<td>Allow opinions only as “Field Notes” or “Sam’s Heuristics,” separate from canonical definitions.</td>
+</tr>
+<tr>
+<td>What is the minimum viable entry?</td>
+<td>Prevents perfectionism.</td>
+<td>Definition, core concept, why it matters, example, mistakes, related terms, source notes.</td>
+</tr>
+<tr>
+<td>Should every term have relationships?</td>
+<td>Enables future interactive graph/wiki.</td>
+<td>Yes, at least <code>related</code>, <code>confused_with</code>, and <code>prerequisites</code>.</td>
+</tr>
+<tr>
+<td>Should the project accept contributions immediately?</td>
+<td>Public repo may attract suggestions.</td>
+<td>Add issue templates now; PR contribution guidelines after first 25 entries.</td>
+</tr>
+<tr>
+<td>Should diagrams be generated for every major category?</td>
+<td>Visuals improve learning but take time.</td>
+<td>Add visuals only to pillar concepts first.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="q8-source-notes-from-this-session">Q8. Source Notes From This Session<a class="headerlink" href="#q8-source-notes-from-this-session" title="Permanent link">&para;</a></h2>
+<h3 id="editorial-rule">Editorial Rule<a class="headerlink" href="#editorial-rule" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Use newsletters and explainers for vocabulary discovery. Use official docs, research papers, and standards for canonical definitions.</p>
+</blockquote>
+<h3 id="discovery-sources">Discovery Sources<a class="headerlink" href="#discovery-sources" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The Neuron / The Neuron Daily — useful for discovering emerging AI workflow language, prompt phrasing, newsletter-friendly explanations, and user-facing confusion points.</li>
+<li>Engineering blogs, conference talks, GitHub READMEs, and community discussions — useful for identifying terms people actually use.</li>
+</ul>
+<h3 id="canonical-definition-sources-to-prefer">Canonical Definition Sources To Prefer<a class="headerlink" href="#canonical-definition-sources-to-prefer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OpenAI developer documentation — prompt engineering, structured outputs, function/tool calling, prompt/versioning guidance, agents, tools, evals.</li>
+<li>Anthropic Claude docs — prompt engineering workflow, success criteria, eval-first prompting, guardrails.</li>
+<li>Model Context Protocol docs — MCP terminology, servers, clients, tools, resources, prompts.</li>
+<li>GitHub Docs — repository, wiki, Pages, contribution workflow, Markdown support.</li>
+<li>Standards and specs — JSON Schema, OpenAPI, GraphQL, OAuth, OWASP, Kubernetes docs, SRE books.</li>
+<li>Research papers — RAG, tool use, agent evaluation, hallucination, retrieval, benchmark methodology.</li>
+</ul>
+<h3 id="notes-on-public-reuse">Notes on Public Reuse<a class="headerlink" href="#notes-on-public-reuse" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Do not copy paid newsletter content.</li>
+<li>Do not republish long source excerpts.</li>
+<li>Keep prompt patterns generic unless the source explicitly licenses reuse.</li>
+<li>Add source links and classify source type.</li>
+<li>Mark emerging terms as <code>seed</code> or <code>draft</code> until confirmed.</li>
+</ul>
+<hr />
+<h2 id="q9-follow-up-wiki-entries-to-create-first">Q9. Follow-Up Wiki Entries To Create First<a class="headerlink" href="#q9-follow-up-wiki-entries-to-create-first" title="Permanent link">&para;</a></h2>
+<h3 id="p0-create-immediately">P0 — Create Immediately<a class="headerlink" href="#p0-create-immediately" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>prompt-macro.md</code></li>
+<li><code>workflow-phrase.md</code></li>
+<li><code>backend-ready-frontend-spec.md</code></li>
+<li><code>field-to-backend-mapping.md</code></li>
+<li><code>frontend-backend-contract-engineering.md</code></li>
+<li><code>frontend-backend-handoff-packet.md</code></li>
+<li><code>session-to-wiki-compiler.md</code></li>
+<li><code>durable-knowledge-object.md</code></li>
+<li><code>no-loss-distillation.md</code></li>
+<li><code>source-tiering.md</code></li>
+<li><code>canonical-entry.md</code></li>
+<li><code>docs-as-database.md</code></li>
+<li><code>extract-dont-summarize.md</code></li>
+<li><code>mock-data-must-match-final-api.md</code></li>
+<li><code>define-done.md</code></li>
+</ol>
+<h3 id="p1-create-next">P1 — Create Next<a class="headerlink" href="#p1-create-next" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>api-contract.md</code></li>
+<li><code>contract-first-development.md</code></li>
+<li><code>schema-first-development.md</code></li>
+<li><code>integration-ready-backend.md</code></li>
+<li><code>mock-api.md</code></li>
+<li><code>fixture-fidelity.md</code></li>
+<li><code>state-matrix.md</code></li>
+<li><code>permission-matrix.md</code></li>
+<li><code>promptops.md</code></li>
+<li><code>prompt-regression-test.md</code></li>
+<li><code>structured-output.md</code></li>
+<li><code>function-calling.md</code></li>
+<li><code>tool-calling.md</code></li>
+<li><code>mcp.md</code></li>
+<li><code>agent-loop.md</code></li>
+<li><code>fixed-pass-loop.md</code></li>
+<li><code>verifier.md</code></li>
+<li><code>critic-agent.md</code></li>
+<li><code>rag.md</code></li>
+<li><code>context-packet.md</code></li>
+</ol>
+<h3 id="p2-expand-after-foundation">P2 — Expand After Foundation<a class="headerlink" href="#p2-expand-after-foundation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>retrieval-augmented-generation.md</code></li>
+<li><code>embedding.md</code></li>
+<li><code>vector-database.md</code></li>
+<li><code>reranking.md</code></li>
+<li><code>eval.md</code></li>
+<li><code>golden-set.md</code></li>
+<li><code>guardrail.md</code></li>
+<li><code>red-team.md</code></li>
+<li><code>idempotency.md</code></li>
+<li><code>backpressure.md</code></li>
+<li><code>circuit-breaker.md</code></li>
+<li><code>rate-limiting.md</code></li>
+<li><code>least-privilege.md</code></li>
+<li><code>observability.md</code></li>
+<li><code>distributed-tracing.md</code></li>
+</ol>
+<hr />
+<h2 id="q10-github-repository-bootstrap-plan">Q10. GitHub Repository Bootstrap Plan<a class="headerlink" href="#q10-github-repository-bootstrap-plan" title="Permanent link">&para;</a></h2>
+<p>Recommended public architecture:</p>
+<pre><code class="language-txt">ai-engineering-almanac/
+  README.md
+  ROADMAP.md
+  CONTRIBUTING.md
+  docs/
+    index.md
+    source-strategy.md
+    research/
+      research-batch-01.md
+    terms/
+      prompt-macro.md
+      workflow-phrase.md
+    prompt-macros/
+      extract-conversation-into-durable-knowledge-objects.md
+      backend-ready-frontend-spec.md
+    frontend-backend-contracts/
+      frontend-backend-mapping-table.md
+      backend-ready-frontend-spec.md
+    conversation-capture/
+      session-to-wiki-compiler.md
+      durable-knowledge-object.md
+    templates/
+      canonical-entry-template.md
+      prompt-macro-template.md
+      session-capture-template.md
+      frontend-backend-handoff-packet.md
+    assets/
+      frontend-backend-mapping-guide.png
+  data/
+    terms.yml
+  .github/
+    ISSUE_TEMPLATE/
+      term-request.yml
+      prompt-macro-request.yml
+</code></pre>
+<p>Principle:</p>
+<blockquote>
+<p>Start as a Markdown database. Publish as a docs site. Later, generate an interactive wiki from the same frontmatter and file tree.</p>
+</blockquote>
+<hr />
+<h2 id="q11-next-moves">Q11. Next Moves<a class="headerlink" href="#q11-next-moves" title="Permanent link">&para;</a></h2>
+<h3 id="move-1-seed-the-repo">Move 1 — Seed the repo<a class="headerlink" href="#move-1-seed-the-repo" title="Permanent link">&para;</a></h3>
+<p>Add the starter docs, templates, asset image, and updated research batch.</p>
+<h3 id="move-2-choose-the-first-docs-engine">Move 2 — Choose the first docs engine<a class="headerlink" href="#move-2-choose-the-first-docs-engine" title="Permanent link">&para;</a></h3>
+<p>Default: MkDocs Material because it is fast, Markdown-native, searchable, and easy to deploy. Docusaurus is a strong later option if the project needs React/MDX interactivity.</p>
+<h3 id="move-3-create-the-first-15-pages">Move 3 — Create the first 15 pages<a class="headerlink" href="#move-3-create-the-first-15-pages" title="Permanent link">&para;</a></h3>
+<p>Do not try to polish 300 entries first. Publish a useful seed with the P0 entries and make the structure obvious.</p>
+<h3 id="move-4-add-status-labels">Move 4 — Add status labels<a class="headerlink" href="#move-4-add-status-labels" title="Permanent link">&para;</a></h3>
+<p>Use:</p>
+<pre><code class="language-txt">seed → draft → reviewed → verified → canonical
+</code></pre>
+<p>Also use:</p>
+<pre><code class="language-txt">source-reported
+needs-source
+needs-example
+needs-diagram
+needs-production-notes
+</code></pre>
+<h3 id="move-5-add-a-contribution-workflow">Move 5 — Add a contribution workflow<a class="headerlink" href="#move-5-add-a-contribution-workflow" title="Permanent link">&para;</a></h3>
+<p>Start with issue templates:</p>
+<ul>
+<li>request a term,</li>
+<li>request a prompt macro,</li>
+<li>suggest a source,</li>
+<li>propose a correction.</li>
+</ul>
+<h3 id="move-6-add-a-source-strategy-page">Move 6 — Add a source strategy page<a class="headerlink" href="#move-6-add-a-source-strategy-page" title="Permanent link">&para;</a></h3>
+<p>Publish the rule clearly:</p>
+<pre><code class="language-txt">Discovery sources find terms.
+Canonical sources define terms.
+</code></pre>
+<h3 id="move-7-add-the-conversation-capture-playbook">Move 7 — Add the conversation capture playbook<a class="headerlink" href="#move-7-add-the-conversation-capture-playbook" title="Permanent link">&para;</a></h3>
+<p>This becomes one of the Almanac’s unique features. Most AI glossaries do not teach people how to preserve knowledge from AI sessions.</p>
+<h3 id="move-8-turn-research-batch-01-into-entries">Move 8 — Turn Research Batch 01 into entries<a class="headerlink" href="#move-8-turn-research-batch-01-into-entries" title="Permanent link">&para;</a></h3>
+<p>Batch 01 is not the final product. It is a queue. The next workflow is:</p>
+<pre><code class="language-txt">candidate term → draft page → source verification → examples → production notes → canonical page
+</code></pre>
+<h3 id="move-9-use-github-issues-as-the-ingestion-layer">Move 9 — Use GitHub Issues as the ingestion layer<a class="headerlink" href="#move-9-use-github-issues-as-the-ingestion-layer" title="Permanent link">&para;</a></h3>
+<p>Every new term idea can start as an issue. Every term page can close an issue.</p>
+<h3 id="move-10-build-the-interactive-layer-later">Move 10 — Build the interactive layer later<a class="headerlink" href="#move-10-build-the-interactive-layer-later" title="Permanent link">&para;</a></h3>
+<p>After 100+ structured pages exist, generate:</p>
+<ul>
+<li>search index,</li>
+<li>term graph,</li>
+<li>aliases index,</li>
+<li>confused-with comparisons,</li>
+<li>prompt macro browser,</li>
+<li>source coverage dashboard,</li>
+<li>entry status dashboard.</li>
+</ul>
+<hr />
+<h2 id="q12-one-sentence-project-direction">Q12. One-Sentence Project Direction<a class="headerlink" href="#q12-one-sentence-project-direction" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>The AI Engineering Almanac should become a public, source-aware, GitHub-backed, Markdown-first wiki/database of AI engineering concepts, workflow phrases, prompt macros, implementation templates, and conversation-capture patterns.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.sections", "navigation.indexes", "toc.follow", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
