@@ -1,0 +1,41 @@
+name: Feature request
+description: Suggest a product, wiki, AI assistant, data, or publishing feature
+title: "[Feature]: "
+labels: ["feature", "seed"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should be built?
+    validations:
+      required: true
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User story
+      description: Who is this for and what should they be able to do?
+      placeholder: "As a user, I want to... so that..."
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: What must be true for this feature to count as done?
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - docs-site
+        - prompt-finder
+        - search
+        - data-model
+        - contribution-workflow
+        - research-workflow
+        - visual-design
+        - unknown
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Links, sketches, examples, or implementation ideas.
