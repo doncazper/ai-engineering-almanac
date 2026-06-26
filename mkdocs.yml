@@ -19,13 +19,23 @@ nav:
       - Research Batch 01: research/research-batch-01.md
   - Frontend–Backend Contracts:
       - Backend-Ready Frontend Spec: frontend-backend-contracts/backend-ready-frontend-spec.md
-      - Frontend–Backend Mapping Table: frontend-backend-contracts/frontend-backend-mapping-table.md
+      - Field-to-Backend Mapping: frontend-backend-contracts/field-to-backend-mapping.md
+      - Contract Engineering: frontend-backend-contracts/frontend-backend-contract-engineering.md
+      - Handoff Packet: frontend-backend-contracts/frontend-backend-handoff-packet.md
+      - Mock Data Must Match Final API: frontend-backend-contracts/mock-data-must-match-final-api.md
   - Conversation Capture:
       - Session-to-Wiki Compiler: conversation-capture/session-to-wiki-compiler.md
       - Durable Knowledge Object: conversation-capture/durable-knowledge-object.md
+      - No-Loss Distillation: conversation-capture/no-loss-distillation.md
+      - Extract, Don't Summarize: conversation-capture/extract-dont-summarize.md
   - Prompt Macros:
-      - Extract Conversation Into Durable Knowledge Objects: prompt-macros/extract-conversation-into-durable-knowledge-objects.md
-      - Backend-Ready Frontend Spec: prompt-macros/backend-ready-frontend-spec.md
+      - Prompt Macro: prompt-macros/prompt-macro.md
+      - Workflow Phrase: prompt-macros/workflow-phrase.md
+      - Define Done: prompt-macros/define-done.md
+  - Wiki Database:
+      - Source Tiering: wiki-database/source-tiering.md
+      - Canonical Entry: wiki-database/canonical-entry.md
+      - Docs-as-Database: wiki-database/docs-as-database.md
   - Templates:
       - Canonical Entry Template: templates/canonical-entry-template.md
       - Prompt Macro Template: templates/prompt-macro-template.md
