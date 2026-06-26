@@ -1,0 +1,376 @@
+# Machine-readable index of reusable prompt macros.
+# This file is an early seed for the future Prompt Finder feature.
+
+- id: backend-ready-frontend-spec
+  title: "Generate a Backend-Ready Frontend Spec"
+  type: "prompt_macro"
+  status: "draft"
+  section: "Frontend-Backend Contract Engineering"
+  aliases:
+    - "backend ready spec"
+    - "frontend backend handoff"
+    - "implementation-ready UI spec"
+    - "turn app idea into backend requirements"
+  intent:
+    - "turn rough product idea into implementation spec"
+    - "prepare frontend and backend to build in parallel"
+    - "define API contracts from UI requirements"
+  user_says:
+    - "I need a prompt to build the backend from the frontend"
+    - "I want frontend and backend to match"
+    - "Help me spec an app idea"
+    - "Make this UI ready for backend implementation"
+  tags:
+    - frontend
+    - backend
+    - api-contracts
+    - database
+    - product-spec
+  prompt_template: |
+    Create a backend-ready frontend spec for the following feature:
+
+    Feature:
+    {{feature}}
+
+    Include:
+    1. Mock screenshots or wireframes
+    2. User flow
+    3. Every visible field
+    4. Field-to-backend mapping
+    5. API endpoints required
+    6. Request and response payloads
+    7. Database tables and columns
+    8. Validation rules
+    9. Empty states
+    10. Loading states
+    11. Error states
+    12. Permission rules
+    13. Analytics events
+    14. Test cases
+    15. Mock data fixtures
+  related_entries:
+    - field-to-backend-mapping
+    - frontend-backend-handoff-packet
+    - mock-data-must-match-final-api
+
+- id: extract-conversation-into-durable-knowledge-objects
+  title: "Extract Conversation Into Durable Knowledge Objects"
+  type: "prompt_macro"
+  status: "draft"
+  section: "Conversation Capture & Knowledge Distillation"
+  aliases:
+    - "extract don't summarize"
+    - "session capture"
+    - "conversation to wiki"
+    - "no-loss distillation"
+  intent:
+    - "turn an AI conversation into reusable project knowledge"
+    - "preserve decisions, templates, artifacts, and follow-ups"
+    - "avoid losing useful context from a long conversation"
+  user_says:
+    - "Summarize this conversation without losing anything"
+    - "Turn this chat into wiki entries"
+    - "Extract the useful stuff from this session"
+  tags:
+    - conversation-capture
+    - knowledge-management
+    - wiki
+    - documentation
+  prompt_template: |
+    Extract this conversation into durable knowledge objects.
+
+    Create:
+    - canonical terms
+    - prompt macros
+    - decisions
+    - templates
+    - artifacts
+    - open questions
+    - source notes
+    - follow-up wiki entries
+
+    Preserve important information before compressing. Do not flatten the conversation into a vague summary.
+  related_entries:
+    - session-to-wiki-compiler
+    - durable-knowledge-object
+    - no-loss-distillation
+
+- id: turn-ui-into-backend-requirements
+  title: "Turn This UI Into Backend Requirements"
+  type: "prompt_macro"
+  status: "seed"
+  section: "Frontend-Backend Contract Engineering"
+  aliases:
+    - "infer backend from UI"
+    - "UI to API requirements"
+    - "screen to backend spec"
+  intent:
+    - "derive APIs, database tables, and permissions from a screen or wireframe"
+  user_says:
+    - "Here is a screen, what backend do I need?"
+    - "Turn this mockup into API requirements"
+  tags:
+    - frontend
+    - backend
+    - api
+    - database
+  prompt_template: |
+    Given this screen or wireframe, infer all backend requirements.
+
+    Include:
+    1. APIs required
+    2. Request and response payloads
+    3. Database tables and relationships
+    4. Auth and permission rules
+    5. Validation rules
+    6. Background jobs or side effects
+    7. Analytics events
+    8. Test cases
+    9. Integration risks
+  related_entries:
+    - field-to-backend-mapping
+    - backend-ready-frontend-spec
+
+- id: map-ui-fields-to-database-and-api
+  title: "Map Every UI Field to Database and API Fields"
+  type: "prompt_macro"
+  status: "seed"
+  section: "Frontend-Backend Contract Engineering"
+  aliases:
+    - "field mapping table"
+    - "UI to DB mapping"
+    - "frontend backend mapping"
+  intent:
+    - "avoid naming mismatches between UI, frontend state, API, backend, and database"
+  user_says:
+    - "Map the frontend fields to backend fields"
+    - "Make sure my API fields match the form"
+  tags:
+    - frontend
+    - backend
+    - database
+    - api-contracts
+  prompt_template: |
+    Create a field mapping table that connects each UI element to frontend state, API request field, backend DTO, validation rule, database column, and error message.
+  related_entries:
+    - field-to-backend-mapping
+    - contract-first-development
+
+- id: define-done
+  title: "Define Done"
+  type: "prompt_macro"
+  status: "draft"
+  section: "Prompt Engineering and Prompt Macros"
+  aliases:
+    - "definition of done"
+    - "acceptance criteria"
+    - "completion criteria"
+  intent:
+    - "turn a vague task into measurable acceptance criteria"
+  user_says:
+    - "How do I know this is finished?"
+    - "Create acceptance criteria"
+  tags:
+    - planning
+    - qa
+    - product
+    - engineering
+  prompt_template: |
+    Define done for this task.
+
+    Include:
+    1. Functional requirements
+    2. Non-functional requirements
+    3. Edge cases
+    4. Acceptance criteria
+    5. Test cases
+    6. Required documentation
+    7. What is explicitly out of scope
+  related_entries:
+    - prompt-macro
+    - workflow-phrase
+
+- id: create-a-verifier
+  title: "Create a Verifier"
+  type: "prompt_macro"
+  status: "seed"
+  section: "Evaluation, Guardrails, and Reliability"
+  aliases:
+    - "make a critic"
+    - "verification agent"
+    - "quality gate"
+  intent:
+    - "create a second pass that checks work for bugs, missing requirements, and contradictions"
+  user_says:
+    - "Check this work critically"
+    - "Find what is wrong before I ship"
+  tags:
+    - evals
+    - verification
+    - agents
+    - reliability
+  prompt_template: |
+    Create a verifier for this output.
+
+    The verifier should check:
+    1. Missing requirements
+    2. Contradictions
+    3. Incorrect assumptions
+    4. Security risks
+    5. Edge cases
+    6. Test coverage gaps
+    7. Production readiness
+
+    Return issues ranked by severity and propose fixes.
+  related_entries:
+    - adversarial-review
+    - critic-agent
+    - eval
+
+- id: identify-integration-risks-before-implementation
+  title: "Identify Integration Risks Before Implementation"
+  type: "prompt_macro"
+  status: "seed"
+  section: "Frontend-Backend Contract Engineering"
+  aliases:
+    - "preflight integration review"
+    - "integration risk scan"
+  intent:
+    - "find likely frontend/backend bugs before code is written"
+  user_says:
+    - "What will break when I connect frontend and backend?"
+    - "Find integration risks in this plan"
+  tags:
+    - integration
+    - frontend
+    - backend
+    - qa
+  prompt_template: |
+    Review this frontend/backend plan and identify likely integration bugs.
+
+    Look for:
+    1. Naming mismatches
+    2. Missing fields
+    3. Unclear state transitions
+    4. Race conditions
+    5. Auth and permission gaps
+    6. Pagination, filtering, and sorting issues
+    7. Error handling gaps
+    8. Date, money, enum, and ID format inconsistencies
+  related_entries:
+    - field-to-backend-mapping
+    - frontend-backend-handoff-packet
+
+- id: mock-data-must-match-final-api
+  title: "Mock Data Must Match Final API"
+  type: "prompt_macro"
+  status: "draft"
+  section: "Frontend-Backend Contract Engineering"
+  aliases:
+    - "realistic mock fixtures"
+    - "mock API parity"
+  intent:
+    - "ensure frontend mock data does not create delayed integration bugs"
+  user_says:
+    - "Generate mock data for my frontend"
+    - "Make fake API responses"
+  tags:
+    - mock-data
+    - frontend
+    - api-contracts
+    - testing
+  prompt_template: |
+    Generate realistic mock data fixtures that exactly match the planned API response schema.
+
+    Include:
+    1. Happy path examples
+    2. Empty states
+    3. Error examples
+    4. Edge cases
+    5. Large dataset examples
+    6. Null or optional fields
+    7. Timestamps and IDs in the final expected format
+  related_entries:
+    - backend-ready-frontend-spec
+    - api-contract
+
+- id: create-frontend-backend-handoff-packet
+  title: "Create a Frontend-Backend Handoff Packet"
+  type: "prompt_macro"
+  status: "seed"
+  section: "Frontend-Backend Contract Engineering"
+  aliases:
+    - "implementation handoff packet"
+    - "feature handoff spec"
+  intent:
+    - "create a complete handoff package for parallel frontend/backend work"
+  user_says:
+    - "Make a handoff doc for this feature"
+    - "Prepare frontend and backend to build in parallel"
+  tags:
+    - handoff
+    - frontend
+    - backend
+    - product-spec
+  prompt_template: |
+    Create a frontend-backend handoff packet for this feature.
+
+    Include:
+    1. Feature summary
+    2. User stories
+    3. Mock screens
+    4. User flow
+    5. UI component inventory
+    6. Field-to-backend mapping
+    7. API contracts
+    8. Database schema
+    9. Auth and permissions
+    10. Validation rules
+    11. Error states
+    12. Loading states
+    13. Empty states
+    14. Analytics events
+    15. Test plan
+    16. Edge cases
+    17. Rollout notes
+  related_entries:
+    - frontend-backend-handoff-packet
+    - backend-ready-frontend-spec
+
+- id: turn-this-repeated-workflow-into-a-skill
+  title: "Turn This Repeated Workflow Into a Skill"
+  type: "prompt_macro"
+  status: "seed"
+  section: "Core AI Workflow Taxonomy"
+  aliases:
+    - "make this a skill"
+    - "reusable AI workflow"
+    - "skillify this workflow"
+  intent:
+    - "convert a repeated AI task into a reusable structured workflow"
+  user_says:
+    - "I keep doing this same thing with AI"
+    - "Make this process reusable"
+  tags:
+    - skills
+    - workflow
+    - ai-assistant
+    - prompt-engineering
+  prompt_template: |
+    Turn this repeated workflow into a reusable AI skill.
+
+    Include:
+    1. Skill name
+    2. Trigger phrases
+    3. Required inputs
+    4. Optional inputs
+    5. Step-by-step workflow
+    6. Quality bar
+    7. Examples
+    8. Avoid-list
+    9. Output format
+    10. Version number
+  related_entries:
+    - ai-skill
+    - prompt-macro
+    - workflow-phrase
