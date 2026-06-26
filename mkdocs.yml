@@ -14,7 +14,16 @@ plugins:
   - search
 nav:
   - Home: index.md
+  - Project Direction: project-direction.md
   - Source Strategy: source-strategy.md
+  - Planning:
+      - Milestone 0.1 — Public Skeleton: planning/milestone-0-1-public-skeleton.md
+      - Status Pipeline: planning/status-pipeline.md
+      - Contribution Intake: planning/contribution-intake.md
+  - AI Almanac Assistant:
+      - Prompt Finder: ai-almanac-assistant/prompt-finder.md
+  - Knowledge System:
+      - Obsidian-to-GitHub Pipeline: knowledge-system/obsidian-to-github-pipeline.md
   - Research:
       - Research Batch 01: research/research-batch-01.md
   - Frontend–Backend Contracts:
