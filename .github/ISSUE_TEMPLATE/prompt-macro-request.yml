@@ -1,0 +1,26 @@
+name: Prompt macro request
+description: Suggest a reusable prompt phrase or workflow
+title: "[Prompt Macro]: "
+labels: ["prompt-macro", "seed"]
+body:
+  - type: input
+    id: macro
+    attributes:
+      label: Prompt macro name
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt text
+      description: Paste the reusable prompt or phrase.
+  - type: textarea
+    id: usewhen
+    attributes:
+      label: Use when
+      description: When should someone use this?
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output
+      description: What should the AI produce?

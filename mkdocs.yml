@@ -1,0 +1,40 @@
+site_name: AI Engineering Almanac
+site_description: Source-aware AI engineering terms, workflow phrases, prompt macros, and production patterns.
+repo_url: https://github.com/doncazper/ai-engineering-almanac
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.indexes
+    - toc.follow
+    - search.highlight
+    - search.share
+plugins:
+  - search
+nav:
+  - Home: index.md
+  - Source Strategy: source-strategy.md
+  - Research:
+      - Research Batch 01: research/research-batch-01.md
+  - Frontend–Backend Contracts:
+      - Backend-Ready Frontend Spec: frontend-backend-contracts/backend-ready-frontend-spec.md
+      - Frontend–Backend Mapping Table: frontend-backend-contracts/frontend-backend-mapping-table.md
+  - Conversation Capture:
+      - Session-to-Wiki Compiler: conversation-capture/session-to-wiki-compiler.md
+      - Durable Knowledge Object: conversation-capture/durable-knowledge-object.md
+  - Prompt Macros:
+      - Extract Conversation Into Durable Knowledge Objects: prompt-macros/extract-conversation-into-durable-knowledge-objects.md
+      - Backend-Ready Frontend Spec: prompt-macros/backend-ready-frontend-spec.md
+  - Templates:
+      - Canonical Entry Template: templates/canonical-entry-template.md
+      - Prompt Macro Template: templates/prompt-macro-template.md
+      - Session Capture Template: templates/session-capture-template.md
+      - Frontend–Backend Handoff Packet: templates/frontend-backend-handoff-packet.md
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true

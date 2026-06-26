@@ -1,0 +1,38 @@
+terms:
+  - id: backend-ready-frontend-spec
+    title: Backend-Ready Frontend Spec
+    category: frontend-backend-contracts
+    status: draft
+    path: docs/frontend-backend-contracts/backend-ready-frontend-spec.md
+    aliases:
+      - backend-ready UI spec
+      - frontend-to-backend implementation spec
+    related:
+      - field-to-backend-mapping
+      - api-contract
+      - contract-first-development
+  - id: frontend-backend-mapping-table
+    title: Frontend–Backend Mapping Table
+    category: frontend-backend-contracts
+    status: draft
+    path: docs/frontend-backend-contracts/frontend-backend-mapping-table.md
+    aliases:
+      - field-to-backend mapping
+      - UI-to-API mapping
+  - id: session-to-wiki-compiler
+    title: Session-to-Wiki Compiler
+    category: conversation-capture
+    status: draft
+    path: docs/conversation-capture/session-to-wiki-compiler.md
+  - id: durable-knowledge-object
+    title: Durable Knowledge Object
+    category: conversation-capture
+    status: draft
+    path: docs/conversation-capture/durable-knowledge-object.md
+prompt_macros:
+  - id: extract-conversation-into-durable-knowledge-objects
+    title: Extract Conversation Into Durable Knowledge Objects
+    path: docs/prompt-macros/extract-conversation-into-durable-knowledge-objects.md
+  - id: backend-ready-frontend-spec-macro
+    title: Generate a Backend-Ready Frontend Spec
+    path: docs/prompt-macros/backend-ready-frontend-spec.md

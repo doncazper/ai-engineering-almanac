@@ -1,0 +1,32 @@
+name: Term request
+description: Suggest a new term for the AI Engineering Almanac
+title: "[Term]: "
+labels: ["term-request", "seed"]
+body:
+  - type: input
+    id: term
+    attributes:
+      label: Term
+      description: What term should be added?
+    validations:
+      required: true
+  - type: textarea
+    id: definition
+    attributes:
+      label: Draft definition
+      description: What do you think it means?
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Add official docs, papers, standards, or discovery sources.
+  - type: dropdown
+    id: source-tier
+    attributes:
+      label: Source tier
+      options:
+        - canonical
+        - discovery
+        - community
+        - internal-session
+        - unknown
