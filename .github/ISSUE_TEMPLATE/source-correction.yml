@@ -1,0 +1,38 @@
+name: Source / correction request
+description: Suggest a source, correction, clarification, or verification update
+title: "[Source/Correction]: "
+labels: ["source-note", "needs-review"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What should be corrected, clarified, sourced, or verified?
+    validations:
+      required: true
+  - type: input
+    id: affected-page
+    attributes:
+      label: Affected page or term
+      description: Link or name the Almanac page, term, or prompt macro.
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: Add the source URL, citation, paper, standard, documentation page, or discovery note.
+  - type: dropdown
+    id: source-tier
+    attributes:
+      label: Source tier
+      options:
+        - canonical
+        - vendor
+        - discovery
+        - community
+        - internal-session
+        - unknown
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed change
+      description: What text or status should change?
